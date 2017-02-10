@@ -7,14 +7,16 @@ var canvas = function (canvasel, width, height) {
      this.context = canvasel.getContext('2d');
 }
 
-var convolut = function(){
+var convolut = function(matrix,imgurl){
 
-var img = new Image();
+
 
 
   canvas = new canvas(document.getElementById('canvas1'),400,400);
 
 var img = new Image();
+    img.crossOrigin = "Anonymous";
+
 img.onload = function () {
    
 
@@ -120,12 +122,12 @@ img.onload = function () {
             // [-1  0   1 ]   
 
             
-var newRed = (topLeftR * 1) + (topMidR * 0) + (topRightR * -1) + (midLeftR * 0) + (middleR * 0) + (midRightR * 0) + (botLeftR * -1) + (botMidR * 0) + (botRightR * 1);
+var newRed = (topLeftR * matrix.tpl ) + (topMidR * matrix.tpm) + (topRightR * matrix.tpr) + (midLeftR * matrix.mdl) + (middleR * matrix.mdm) + (midRightR * matrix.mdr) + (botLeftR * matrix.btl) + (botMidR * matrix.btm) + (botRightR * matrix.btr);
 
 
-var newGreen = (topLeftG * 1) + (topMidG * 0) + (topRightG * -1) + (midLeftG * 0) + (middleG * 0) + (midRightG * 0) + (botLeftG * -1) + (botMidG * 0) + (botRightG * 1);
+var newGreen = (topLeftG * matrix.tpl) + (topMidG * matrix.tpm) + (topRightG * matrix.tpr) + (midLeftG * matrix.mdl) + (middleG * matrix.mdm) + (midRightG * matrix.mdr) + (botLeftG * matrix.btl) + (botMidG * matrix.btm) + (botRightG * matrix.btr);
 
-var newBlue = (topLeftB * 1) + (topMidB * 0) + (topRightB * -1) + (midLeftB * 0) + (middleB * 0) + (midRightB * 0) + (botLeftB * -1) + (botMidB * 0) + (botRightB * 1);
+var newBlue = (topLeftB * matrix.tpl) + (topMidB * matrix.tpm) + (topRightB * matrix.tpr) + (midLeftB * matrix.mdl) + (middleB * matrix.mdm) + (midRightB * matrix.mdr) + (botLeftB * matrix.btl) + (botMidB * matrix.btm) + (botRightB * matrix.btr);
 
 
 
@@ -153,6 +155,6 @@ var newBlue = (topLeftB * 1) + (topMidB * 0) + (topRightB * -1) + (midLeftB * 0)
 
 
 
-img.src = "cat.jpeg";
+img.src = imgurl;
     
 }

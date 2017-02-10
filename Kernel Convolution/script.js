@@ -1,11 +1,21 @@
 jQuery.getScript("Convolution.js", function(data, status, jqxhr) {
 
-convolut();
+
+mtrx = {"tpl":1,"tpm":0, "tpr":-1,"mdl":0,"mdm":0,"mdr":0,"btl":-1,"btm":0,btr:1}
+    
+imageurl = "stat.jpeg";    
+    
+convolut(mtrx,imageurl);
 
 });
 
-array = [[]];
 
-array[0][1]= 5;
 
-console.log(array[0][1]);
+
+
+
+    //mask used[ 1  0  -1 ]
+
+            // [ 0   0  0 ]
+
+            // [-1  0   1 ]   

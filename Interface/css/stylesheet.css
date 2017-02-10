@@ -1,0 +1,50 @@
+body{
+    background-image: url(../css/background.jpg); 
+        background-attachment: fixed;
+   background-repeat:no-repeat;
+       background-size:cover;
+    background-size:100% 100vh;
+
+
+}
+
+#welt{
+       padding-top: 20px;
+     padding-left: 30%;
+     
+     width: 480px;
+      position: inherit;
+     color: aqua;
+     text-align: center;
+    align-content: center;
+    
+}
+
+#nme{
+     position:fixed;
+     top: 550px;
+     left: 45%;
+     
+     
+ }
+
+#nmbt{
+ 
+
+    width: 70px;
+     position:fixed;
+     top: 600px;
+     left: 47.5%;
+     
+     
+ }
+
+#enterName{
+    
+  
+     color: aqua;
+     padding-top: 20px;
+     padding-left: 40%;
+
+}
+ 
