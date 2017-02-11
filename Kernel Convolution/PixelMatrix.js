@@ -62,6 +62,56 @@ var pix = 0;
 
     console.log(ar);
     
+    var ar2 = new Array();
+        
+        for(var b = 164* 1; b < 400 * 2; b++){
+            
+            for(var c = 0; c < 400; c++ ){
+                
+                ar2.push(matrix[b][c]) 
+                
+            }
+            
+        }
+    
+    
+    
+      jQuery.getScript("jquery.js", function(data, status, jqxhr) {
+
+          
+console.log('get a sub matrix');
+var h = math.diag(math.range(1,4));
+window.alert(h);                                    
+          
+        //[[1, 0, 0],
+  //      [0, 2, 0], 
+      //  [0, 0, 3]]
+
+          
+          window.alert(h.subset( math.index([1, 2], [1, 2]))); // [[2, 0], [0, 3]]
+var i = math.range(1,6);
+window.alert(i);                                     // [1, 2, 3, 4, 5]
+window.alert(i.subset(math.index(math.range(1,4)))); // [2, 3, 4]
+console.log();
+      });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
    var c = document.getElementById("canvas2");
@@ -75,16 +125,16 @@ for (i = 0; i < imgData.data.length; i++) {
     
     
     if(i < 1600 * 131){
-        imgData.data[i] = 0;
+        imgData.data[i] = 100;
         
     }else{
-    imgData.data[i] = ar[i];
+    imgData.data[i] = ar2[i];
   co++;
     }
 }
-    window.alert(co);
+   // window.alert(co);
 ctx.putImageData(imgData, 0, 0);
 
-console.log(ar)
+console.log(ar2)
 
 }
