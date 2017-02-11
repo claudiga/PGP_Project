@@ -30,9 +30,9 @@ img.onload = function () {
     
     var pixel = 0;
   var matrix = [];
-for(var i=0; i<canvas.width; i++) {
+for(var i=0; i<canvas.width * 2; i++) {
     matrix[i] = [];
-    for(var j=0; j<canvas.height; j++) {
+    for(var j=0; j<canvas.height * 2; j++) {
         matrix[i][j] = data[pixel];
         
         pixel++;
@@ -44,10 +44,10 @@ var pix = 0;
     var ar = [];
     var myarr = new Array();
     
-    for(var k = 0; k < 333; k++){
+    for(var k = 0; k < 400 * 2; k++){
         
         
-        for(var x = 0; x < 250; x++){
+        for(var x = 0; x < 400 * 2; x++){
        
         
         
@@ -55,28 +55,34 @@ var pix = 0;
             pix++;
             
     }
-       
-    
+
         a++;
     }
    
-   
-    
+
+    console.log(ar);
     
     
     
    var c = document.getElementById("canvas2");
 var ctx = c.getContext("2d");
-var imgData = ctx.createImageData(333, 250);
+var imgData = ctx.createImageData(400, 400);
     
 
 var i;
+    var co = 0;
 for (i = 0; i < imgData.data.length; i++) {
-    imgData.data[i] = ar[i];
-  
     
+    
+    if(i < 1600 * 131){
+        imgData.data[i] = 0;
+        
+    }else{
+    imgData.data[i] = ar[i];
+  co++;
+    }
 }
-
+    window.alert(co);
 ctx.putImageData(imgData, 0, 0);
 
 console.log(ar)

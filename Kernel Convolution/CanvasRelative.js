@@ -9,7 +9,7 @@ var canvas = function (canvasel, width, height) {
 
 
 img = new Image();
-img.src= "cat.jpeg";
+img.src= "stat.png";
 canvas = new canvas(document.getElementById('canvas1'),400,400);
 img.onload = function () {
    
