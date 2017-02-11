@@ -1,4 +1,4 @@
-var canvas = function (canvasel, width, height) {
+var Getcanvas = function (canvasel, width, height) {
     
      this.el = canvasel;
      this.width = width;
@@ -10,7 +10,7 @@ var canvas = function (canvasel, width, height) {
 
 img = new Image();
 img.src= "stat.png";
-canvas = new canvas(document.getElementById('canvas1'),400,400);
+canvas = new Getcanvas(document.getElementById('canvas1'),400,400);
 img.onload = function () {
    
     document.body.appendChild(img);
@@ -39,31 +39,46 @@ for(var i=0; i<canvas.width; i++) {
     }
     
 }
-    var b = 0;
-    var a = 164;
+var pix = 0;
+    var a = 0;
     var ar = [];
+    var myarr = new Array();
     
-    for(var k = 0; k < 400; k++){
+    for(var k = 0; k < 333; k++){
         
         
-        for(var x = 0; x < 400; x++){
+        for(var x = 0; x < 250; x++){
        
         
         
-        ar[b] =  matrix[a][x]
-      
+       ar[pix] = matrix[a][x];
+            pix++;
+            
     }
-      //  document.write("\n");
-        b++;
+       
+    
         a++;
     }
    
-    pixels.data = data;
-    
-    canvas.context.putImageData(pixels,0,0);
+   
     
     
-console.log(matrix[125]);
-console.log(matrix[125][162], matrix[125][163], matrix[125][164]);
+    
+    
+   var c = document.getElementById("canvas2");
+var ctx = c.getContext("2d");
+var imgData = ctx.createImageData(333, 250);
+    
+
+var i;
+for (i = 0; i < imgData.data.length; i++) {
+    imgData.data[i] = ar[i];
+  
+    
+}
+
+ctx.putImageData(imgData, 0, 0);
+
+console.log(ar)
 
 }
