@@ -1,3 +1,5 @@
+var data2;
+
 var Getcanvas = function (canvasel, width, height) {
     
      this.el = canvasel;
@@ -25,9 +27,10 @@ img.onload = function () {
     console.log(pixels);
     
     var data = pixels.data;
-        console.log(data[0]);
+       
+    data2 =data;
+              
 
-    
     var pixel = 0;
   var matrix = [];
 for(var i=0; i<canvas.width * 2; i++) {
@@ -60,39 +63,93 @@ var pix = 0;
     }
    
 
-    console.log(ar);
+   
+ 
     
-    var ar2 = new Array();
         
-        for(var b = 164* 1; b < 400 * 2; b++){
+
+    var rect = {x:0,y:0,w:400,h:800};
+
+
+    
+    
+    
+    crop = matrix.slice(rect.x, rect.x+rect.w);
+for(var i = 0; i<crop.length; i++){
+    crop[i] = crop[i].slice(rect.y, rect.y+rect.h);
+}
+    
+ // window.alert(crop)
+
+
+
+       
+      jQuery.getScript("math.js", function(data, status, jqxhr) {
+          
+    
+         
+          var h = math.matrix(crop);
+         
+          
+
+          
+          var topa = h.valueOf();
+       //   topa = h.subset(math.index(math.range(0,800),math.range(0,800))).valueOf();
+          
+          var c = document.getElementById("canvas2");
+var ctx = c.getContext("2d");
+var imgData2 = ctx.createImageData(200, 400 );
+        window.alert(topa)
+          
+          
+          
+
+          
+           var ar3 = new Array();
+        
+        for(var b = 0; b < topa.length; b++){
             
-            for(var c = 0; c < 400; c++ ){
+            for(var c = 0; c < topa[b].length  ; c++ ){
                 
-                ar2.push(matrix[b][c]) 
+                ar3.push(topa[b][c]) 
                 
             }
             
         }
-    
-    
-    
-      jQuery.getScript("jquery.js", function(data, status, jqxhr) {
+           //window.alert(ar3.length);
+          
+          
+        console.log(imgData2.data.length);
 
           
-console.log('get a sub matrix');
-var h = math.diag(math.range(1,4));
-window.alert(h);                                    
           
-        //[[1, 0, 0],
-  //      [0, 2, 0], 
-      //  [0, 0, 3]]
+          var i;
+    var co = 0;
+for (i = 0; i < imgData2.data.length; i++) {
+   // if(i > imgData2.data.length /2){
+  //      imgData2.data[i] = 133;
+ //   }
+ //  else{
+   imgData2.data[i] = ar3[i];
+}
+// }
+          imgData2.data = data2;
+           
+           
+        
+              
+              
+              
+              
+              
+              
+     
+              
+              
+              
+          ctx.putImageData(imgData2, 0, 0);
 
-          
-          window.alert(h.subset( math.index([1, 2], [1, 2]))); // [[2, 0], [0, 3]]
-var i = math.range(1,6);
-window.alert(i);                                     // [1, 2, 3, 4, 5]
-window.alert(i.subset(math.index(math.range(1,4)))); // [2, 3, 4]
-console.log();
+      console.log(imgData2.data);
       });
     
     
@@ -114,27 +171,25 @@ console.log();
     
     
     
-   var c = document.getElementById("canvas2");
-var ctx = c.getContext("2d");
-var imgData = ctx.createImageData(400, 400);
-    
-
-var i;
-    var co = 0;
-for (i = 0; i < imgData.data.length; i++) {
     
     
-    if(i < 1600 * 131){
-        imgData.data[i] = 100;
-        
-    }else{
-    imgData.data[i] = ar2[i];
-  co++;
-    }
-}
-   // window.alert(co);
-ctx.putImageData(imgData, 0, 0);
-
-console.log(ar2)
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

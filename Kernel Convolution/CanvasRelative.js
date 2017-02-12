@@ -10,6 +10,7 @@ var canvas = function (canvasel, width, height) {
 
 img = new Image();
 img.src= "stat.png";
+img.style.display = 'None';
 canvas = new canvas(document.getElementById('canvas1'),400,400);
 img.onload = function () {
    
