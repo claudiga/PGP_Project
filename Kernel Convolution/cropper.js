@@ -1,50 +1,19 @@
 
 
     var crop = function(canvas, offsetX, offsetY, width, height) {
-  // create an in-memory canvas
+ 
   var buffer = document.createElement('canvas');
   var b_ctx = buffer.getContext('2d');
-  // set its width/height to the required ones
   buffer.width = width;
   buffer.height = height;
-  // draw the main canvas on our buffer one
-  // drawImage(source, source_X, source_Y, source_Width, source_Height, 
-  //  dest_X, dest_Y, dest_Width, dest_Height)
   b_ctx.drawImage(canvas, offsetX, offsetY, width, height,
                   0, 0, buffer.width, buffer.height);
-  // now call the callback with the dataURL of our buffer canvas
   
         
 return buffer;
 
     };
 
-
-    var uncropped = document.getElementById('canvas1');
-    var uctx = uncropped.getContext('2d');
-
-    var img1 = new Image();
-    img1.src = 'stat.png';
-img1.style.display = 'None';
-        img1.onload = function(){
-            
-            
-uctx.drawImage(img1,0,0)
-
-var buffer2 = crop(uncropped,0,0,200,700);
-            
-            
-                
-document.body.appendChild(buffer2)   
-
-        }
-    
-
-        
-        
-        
-        
-        
         
         
         
@@ -80,14 +49,47 @@ img.onload = function () {
     
   
     
-    canvas.el.addEventListener('click', function(e) {  // use event argument
+    canvas.el.addEventListener('click', function(e) {  
 
-    var rect = canvas.el.getBoundingClientRect();  // get element's abs. position
-    var x = e.clientX - rect.left;              // get mouse x and adjust for el.
-    var y = e.clientY - rect.top;               // get mouse y and adjust for el.
+    var rect = canvas.el.getBoundingClientRect(); 
+    var x = e.clientX - rect.left;              
+    var y = e.clientY - rect.top;               
 
     alert('Mouse position: ' + x + ',' + y);
+        
+   draw(x,y,200,200);  
     //...
     });
                                
 }
+
+
+
+
+
+
+    
+        var draw = function(x,y,width,height){
+            
+            
+            var buffer2 = crop(canvas.el,x,y,width,height);
+            
+            
+                
+document.body.appendChild(buffer2)  
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
