@@ -49,6 +49,16 @@ img.onload = function () {
     
   
     
+    getpos(canvas);
+        
+  
+    
+                               
+}
+
+
+
+var getpos = function(canvas){
     canvas.el.addEventListener('click', function(e) {  
 
     var rect = canvas.el.getBoundingClientRect(); 
@@ -56,16 +66,10 @@ img.onload = function () {
     var y = e.clientY - rect.top;               
 
     alert('Mouse position: ' + x + ',' + y);
-        
-   draw(x,y,200,200);  
-    //...
-    });
-                               
+    
+});
+    
 }
-
-
-
-
 
 
     
