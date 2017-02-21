@@ -21,21 +21,43 @@ var getpos = function(canvas){
     
 });
     
+    var imdat,ctx; 
+    
 }
 
 img.onload = function(){
 var canvas =  document.getElementById('canvas1');
-var ctx = canvas.getContext('2d');
+ ctx = canvas.getContext('2d');
     canvas.height =img.height;
     canvas.width =img.width;
 ctx.drawImage(img,0,0);
     getpos(canvas);
     
-var imdat = ctx.getImageData(0,0,314,472);
-    
-    ctx.drawImage(img2,0,0);
+ imdat = ctx.getImageData(0,0,314,472);
+
+   
+   
  
-    console.log(imdat);
 
 }
+
+function setup(){
+ 
+   
+
+}
+
+function draw(){
+    
+    for(var x = 0; x < imdat.widthhy; x++){
+        log(x)
+    }
+    
+ for(var i = 0; i < imdat.data.length; i+=12.6){
+    ctx.drawImage(img2,i,12.5);     
+    }      
+}
+
+
+
 
