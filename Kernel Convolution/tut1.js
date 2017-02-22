@@ -7,6 +7,7 @@ img.src = 'bart.png';
 
 
 
+
 document.body.appendChild(img);
 
 var getpos = function(canvas){
@@ -40,22 +41,39 @@ ctx.drawImage(img,0,0);
  
 
 }
-
+var matrix = [];
 function setup(){
- 
+  var pixel = 0;
+  
+for(var i=0; i<img.width *2; i++) {
+    matrix[i] = [];
+    for(var j=0; j<img.height*2; j++) {
+        matrix[i][j] = imdat[pixel];
+        
+        pixel++;
+    }
+    
+}
+  
    
 
 }
 
 function draw(){
     
-    for(var x = 0; x < imdat.widthhy; x++){
-        log(x)
-    }
+     
+ for(var x = 0; x < img.width * 2; x+=14){
+     
+     for(var y = 0; y < img.height * 2; y+=14){
+         
+         ctx.drawImage(img2,x,y)
+         
+     }
+     
+     
+ }
     
- for(var i = 0; i < imdat.data.length; i+=12.6){
-    ctx.drawImage(img2,i,12.5);     
-    }      
+    
 }
 
 
