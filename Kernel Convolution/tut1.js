@@ -3,9 +3,7 @@ img2.src = 'psquare.png';
 
 img = new Image();
 img.src = 'bart.jpg';
-img.style.display = 'none'
-
-
+img.style.display = 'none';
 
 
 document.body.appendChild(img);
@@ -18,14 +16,9 @@ var getpos = function(canvas){
     var x = e.clientX - rect.left;              
     var y = e.clientY - rect.top;  
         
-        
-  
 
 return [x,y];    
-    
-        
-        
-        
+
         
         
 });
@@ -90,10 +83,10 @@ var drawsquare = function(canvas){
      canvas.addEventListener('mousemove', function(e) {  
 
     var rect = canvas.getBoundingClientRect(); 
-    posx = e.clientX - rect.left;              
-    posy = e.clientY - rect.top;  
+    posx = e.clientX - rect.left - 150;              
+    posy = e.clientY - rect.top -150;  
     
-        //ctx.drawImage(img2,posx,posy)
+      
 
          
   console.log('posx' + posx + ' posy' + posy);
@@ -121,8 +114,7 @@ var drawsquare = function(canvas){
              xax = Math.floor(posx/16) * 16;  
              yax = Math.floor(posy/16) * 16;
              
-          //   
-        //     ctx.fillText('hello',xax,yax+10);
+     
              
         var matrixx = getImageData(xax,yax,3,1);
 
@@ -132,7 +124,7 @@ var drawsquare = function(canvas){
             
             blue = matrixx[2];
              
-         //   ctx.fillStyle = "#FF0000";
+   
 
              
          ctx.fillStyle = 'rgb('+ red.toString()+ ','+green.toString()+',' + blue.toString() + ')';
@@ -141,40 +133,11 @@ var drawsquare = function(canvas){
              ctx.drawImage(img2,xax,yax);
     console.log(red + ' ' + green + ' ' + blue);
             
-         //   window.alert('rgba('+ red.toString()+ ','+green.toString()+',' + blue.toString() + ')');
-            
-            
-            
-            
+        
+          document.getElementById('rgb').style.backgroundColor = 'rgb('+ red +',' + green +','+ blue;
          
          }
          
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-    
-    
-  
-
-     
-     
- 
 
 
          
