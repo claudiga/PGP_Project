@@ -29,39 +29,49 @@
   <canvas id="hozline" width="300" height="300"></canvas>
   <canvas id="hozline2" width="300" height="300"></canvas>
 
-
-   <canvas id="rgb"> </canvas>
-
-
-
-<canvas id="rawpixels" width="335" height="401"></canvas>
-
-<canvas id="sq" width="100" height="200"></canvas>
-
-
-
+  <div id="tabs">
+  	<ul>
+  		<li><a href="#tabs-1">Add Course</a></li>
+  		<li><a href="#tabs-2">Update Course</a></li>
+  		<li><a href="#tabs-3">Search Course</a></li>
+          <li><a href="#tabs-4">Get all courses</a></li>
+          <li><a href="#tabs-4">Delete Course</a></li>
+  	</ul>
+  	<div id="tabs-1">
 
 
+         <p> Add new courses here</p>
+         <canvas id="rawpixels" width="335" height="401"></canvas>
+         <canvas id="sq" width="100" height="200"></canvas>
 
 
-<div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Add Course</a></li>
-		<li><a href="#tabs-2">Update Course</a></li>
-		<li><a href="#tabs-3">Search Course</a></li>
-        <li><a href="#tabs-4">Get all courses</a></li>
-        <li><a href="#tabs-4">Delete Course</a></li>
-	</ul>
-	<div id="tabs-1">
-
-
-       <p> Add new courses here</p>
-
-
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-	<div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-	<div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 </div>
+
+
+<script>
+var lol = [];
+$("#tabs a").click(function() {
+    lol.push($(this).html());
+});
+window.alert(lol.join())
+</script>
+
+  	<div id="tabs-2">   <canvas id="rgb"> </canvas>
+</div>
+  	<div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

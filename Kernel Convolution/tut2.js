@@ -1,6 +1,8 @@
 $("#tabs").tabs();
 var img2 = new Image();
 img2.src = 'bsquare.png';
+var img3 = new Image();
+img3.src = 'psquare.png';
 
 img = new Image();
 img.src = 'bart.jpg';
@@ -97,6 +99,9 @@ var savedstate= [];
 // 199 - 8
 
          var posxx = posx/16
+         var selectedtab = $("#tabs a").click(function() {
+             alert($(this).html());
+         });
 
 
 
@@ -134,7 +139,9 @@ var savedstate= [];
 if(xax > -5 && xax < 330 && yax > -5 && yax < 230){
              ctx.drawImage(img2,xax,yax);
 
+}else{
 
+  ctx.drawImage(img3,xax+32,yax+80)
 
 
 
