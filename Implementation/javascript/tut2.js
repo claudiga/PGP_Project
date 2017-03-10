@@ -1,11 +1,11 @@
 $("#tabs").tabs();
 var img2 = new Image();
-img2.src = 'bsquare.png';
+img2.src = 'graphics/bsquare.png';
 var img3 = new Image();
-img3.src = 'psquare.png';
+img3.src = 'graphics/psquare.png';
 
 img = new Image();
-img.src = 'bart.jpg';
+img.src = 'graphics/bart.jpg';
 img.style.display = 'none';
 
 
@@ -119,12 +119,7 @@ var savedstate= [];
 
 
 
-        var matrixx = ImageData('canvas1',xax,yax,3,1);
-
-            red = matrixx[0];
-             green = matrixx[1];
-
-            blue = matrixx[2];
+     
 
 
 
@@ -187,7 +182,12 @@ if(tab.includes('Add') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
 
 
   ctx.drawImage(img3,xax+32,yax+80)
+   var matrixx = ImageData('canvas1',xax+40,yax+90,3,1);
 
+            red = matrixx[0];
+             green = matrixx[1];
+
+            blue = matrixx[2];
 
   document.getElementById('rgb').style.backgroundColor = 'rgb('+ red +',' + green +','+ blue;
 
