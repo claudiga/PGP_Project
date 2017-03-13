@@ -16,7 +16,7 @@ background-color: #FFEBEE;
   position:absolute;
 
 
-padding-left:150px;
+padding-left:200px;
 
 padding-top:100px;
 }
@@ -63,3 +63,20 @@ height: 401px;
   background-color: #FFCDD2;
 
 }
+#accordion{
+    
+    position: absolute;
+    margin-top: 70px;
+    margin-right: 1600px;
+    
+    z-index: 7;
+    
+}
+#acborder{
+    background-color:  #FFCDD2;
+    position: absolute;
+    height: 900px;
+    width: 178px;
+}
+
+
