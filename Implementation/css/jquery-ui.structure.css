@@ -188,13 +188,17 @@
 	margin: 2px 0 0 0;
 	padding: .5em .5em .5em .7em;
 	font-size: 100%;
-    background-color: aqua;
+   
 }
 
-.ui-accordion-content-active{
-   background-color: yellow;
+.ui-accordion .ui-accordion-content-active{
+  //color: yellow;
 }
 
+.ui-accordion .ui-accordion-header-active{
+  background-color: #B71C1C
+;
+}
 
 .ui-accordion .ui-accordion-content {
 	padding: 1em 2.2em;

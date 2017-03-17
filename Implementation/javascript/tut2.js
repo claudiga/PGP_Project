@@ -38,7 +38,18 @@ canvas =  document.getElementById('canvas1');
     canvas.height =img.height;
     canvas.width =img.width;
 ctx.drawImage(img,0,0);
+    
 
+ var canH = document.getElementById("hozline");
+  var ctxH = canH.getContext("2d");
+  ctxH.beginPath();
+  ctxH.moveTo(0, 0);
+  ctxH.lineTo(100, 50);
+  ctxH.stroke();
+    
+    
+    
+    
 drawsquare(canvas);
 
 }
@@ -86,7 +97,7 @@ var savedstate= [];
      canvas.addEventListener('mousemove', function(e) {
 
     var rect = canvas.getBoundingClientRect();
-    posx = e.clientX - rect.left - 150;
+    posx = e.clientX - rect.left - 200;
     posy = e.clientY - rect.top -100;
 
 
@@ -128,7 +139,7 @@ var savedstate= [];
                 //  ctx.fillRect(xax,yax,16,16);
 
 
-if(tab.includes('Add') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
+if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
              ctx.drawImage(img2,xax,yax);
 
              var  squareCtx =  canvas.getContext('2d');
@@ -175,7 +186,7 @@ if(tab.includes('Add') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
 
 
 
-}else if (tab.includes('Update')) {
+}else if (tab.includes('view')) {
 
 
 
@@ -192,21 +203,6 @@ if(tab.includes('Add') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
   document.getElementById('rgb').style.backgroundColor = 'rgb('+ red +',' + green +','+ blue;
 
 
-
-//    console.log(red + ' ' + green + ' ' + blue);
-
-
-
-
-        //  ctxp.clearRect(0,0,401,401);
-
-
-
-
-
-
-
-
 }
 
 
@@ -215,9 +211,7 @@ if(tab.includes('Add') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
 
      });
 
-      //   ctx.drawImage(img2,savedstate[0],savedstate[1]);
-
-
+    
 }
 
 var linex = 0;
@@ -232,7 +226,7 @@ function setup(){
 }
 
 function draw(){
-  var c = document.getElementById("hozline");
+/**  var c = document.getElementById("hozline");
   var ctx = c.getContext("2d");
   ctx.beginPath();
   ctx.moveTo(0, 0);
@@ -250,4 +244,5 @@ if(linex < 150)
 
 linex +=1 ;
 console.log(linex);
+**/
 }

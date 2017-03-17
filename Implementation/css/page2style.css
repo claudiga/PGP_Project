@@ -18,12 +18,12 @@ background-color: #FFEBEE;
 
 padding-left:200px;
 
-padding-top:100px;
+padding-top:150px;
 }
 
 
 
- ul{
+ #icons{
    position:absolute;
 
     list-style-type: none;
@@ -42,10 +42,10 @@ height: 401px;
 }
 #hozline{
   position:absolute;
-  margin-left: 550px;
+  margin-left: 700px;
   padding-top: 501px;
 
-
+z-index: 2;
 }
 #hozline2{
   position:absolute;
@@ -58,9 +58,10 @@ height: 401px;
 #tabs{
   position:absolute;
   width: 1000px;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-left: 650px;
   background-color: #FFCDD2;
+    
 
 }
 #accordion{
@@ -68,15 +69,82 @@ height: 401px;
     position: absolute;
     margin-top: 70px;
     margin-right: 1600px;
-    
+    width: 180px;
     z-index: 7;
     
 }
 #acborder{
-    background-color:  #FFCDD2;
+    background-color:  red;
     position: absolute;
-    height: 900px;
+    height: 1000px;
     width: 178px;
+    z-index: -1;
 }
 
+#banner{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    background-color: #FFCDD2;
+    z-index: 8;
+    
+}
+#icons{
+    position: absolute;
+    padding-left: 80%;
+    padding-top: 40px;
+}
+li{float: left; 
+margin: 10px;}
 
+#navBTs{
+    
+    position: absolute;
+    margin-top: 815px;
+    margin-left: 65%;
+    display: inline-block;
+    list-style: none;
+    
+}
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid #FFCDD2; 
+}
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+     border-right:10px solid #FFCDD2; 
+
+}
+#arrow-l{
+    position: absolute;
+    margin-top: 826px;
+    margin-left: 800px;
+    width: 0px;
+    height: 15px;
+}
+#arrow-r{
+
+    position: absolute;
+    margin-top: 826px;
+    margin-left: 1173px;
+    width: 0px;
+    height: 15px;
+    transform: scaleX(-1);
+}
+#prevBT{z-index:6;}
+#Navigation{ position: absolute;}
+
+#sq{
+    
+    margin-bottom: 60px;
+    margin-left: 200px;
+    
+}
