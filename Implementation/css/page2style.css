@@ -42,15 +42,16 @@ height: 401px;
 }
 #hozline{
   position:absolute;
-  margin-left: 700px;
-  padding-top: 501px;
-
+ left: 1015px;
+    top: 290px;
+background-color: palevioletred;
 z-index: 2;
 }
 #hozline2{
   position:absolute;
-  margin-left: 550px;
-  padding-top: 100px;
+  margin-left: ;
+  padding-top: ;
+    background-color: aqua;
 
 
 }
@@ -143,8 +144,8 @@ margin: 10px;}
 #Navigation{ position: absolute;}
 
 #sq{
-    
-    margin-bottom: 60px;
-    margin-left: 200px;
+    position: absolute;
+    left: 360px;
+    top: 233px;
     
 }

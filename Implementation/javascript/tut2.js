@@ -44,7 +44,7 @@ ctx.drawImage(img,0,0);
   var ctxH = canH.getContext("2d");
   ctxH.beginPath();
   ctxH.moveTo(0, 0);
-  ctxH.lineTo(100, 50);
+  ctxH.lineTo(200, 180);
   ctxH.stroke();
     
     
