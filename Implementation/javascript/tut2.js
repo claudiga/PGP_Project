@@ -44,14 +44,19 @@ ctx.drawImage(img,0,0);
   var ctxH = canH.getContext("2d");
   ctxH.beginPath();
   ctxH.moveTo(0, 0);
-  ctxH.lineTo(200, 180);
+  ctxH.lineTo(200, 115);
   ctxH.stroke();
     
+    var canH2 = document.getElementById("hozline2");
+  var ctxH2 = canH2.getContext("2d");
+  ctxH2.beginPath();
+  ctxH2.moveTo(0, 0);
+  ctxH2.lineTo(200, 115);
+  ctxH2.stroke();
     
-    
-    
-drawsquare(canvas);
+    drawColor();
 
+   drawsquare(canvas);
 }
 
 
@@ -97,8 +102,8 @@ var savedstate= [];
      canvas.addEventListener('mousemove', function(e) {
 
     var rect = canvas.getBoundingClientRect();
-    posx = e.clientX - rect.left - 200;
-    posy = e.clientY - rect.top -100;
+    posx = e.clientX - rect.left ;
+    posy = e.clientY - rect.top ;
 
 
 
@@ -136,7 +141,6 @@ var savedstate= [];
 
 
        //  ctx.fillStyle = 'rgb('+ red.toString()+ ','+green.toString()+',' + blue.toString() + ')';
-                //  ctx.fillRect(xax,yax,16,16);
 
 
 if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
@@ -169,7 +173,7 @@ if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
                    for(yrgb = 0,ty= 0; ty <= 401; ty+= 36, yrgb+=11){
 
 
-       //var sq= ImageData('sq',xrgb,yrgb,1,1);
+       
        var sq = ImageData('sq',xrgb+4,yrgb+4,1,1);
        console.log(xrgb)
        ctxp.fillText(sq[0] + ','+ sq[1] +','+ sq[2] ,tx,ty)
@@ -201,8 +205,26 @@ if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
             blue = matrixx[2];
 
   document.getElementById('rgb').style.backgroundColor = 'rgb('+ red +',' + green +','+ blue;
+    
+    var inputrgb = document.getElementById('inputRGB');
+    
+    var elems = inputrgb.getElementsByTagName('input');
+    
+   elems[0].setAttribute('value',red.toString());
+   
+    elems[1].setAttribute('value',green.toString());
+    
+    elems[2].setAttribute('value',blue.toString());
+   
 
+                     
 
+    
+    
+}else{
+    drawColor();
+    
+    
 }
 
 
@@ -216,6 +238,25 @@ if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
 
 var linex = 0;
 var tabsel
+
+var drawColor =  function(){
+    
+    
+     canvas.addEventListener('mousedown', function(e) {
+
+    var rect = canvas.getBoundingClientRect();
+    posx = e.clientX - rect.left - 200;
+    posy = e.clientY - rect.top -150;
+
+         
+      var  xax = Math.floor(posx/16) * 16 - 32;
+          var  yax = Math.floor(posy/16) * 16 - 80;
+         
+         
+         ctx.fillRect(xax+32,yax+80,16,16);
+         
+     });}
+                             
 function setup(){
 
 

@@ -48,13 +48,13 @@
 </div> 
     
 
-  <canvas   id="canvas1"> </canvas>
-
+ 
+    <div id="slider"></div>
 
   <div id="tabs">
   	<ul id="unlist" data-tselected="hey">
-  		<li><a href="#tabs-1">View group</a></li>
-  		<li><a href="#tabs-2">view pixel</a></li>
+  		
+  		<li><a href="#tabs-1">view pixel</a></li>
   		
          
           
@@ -62,25 +62,7 @@
   	<div id="tabs-1">
 
 
-         <p> Add new courses here</p>
-        
-          <canvas id="hozline" width="210" height="202"></canvas>
-  <canvas id="hozline2" width="300" height="300"></canvas>
-         <canvas id="rawpixels" width="335" height="401" style="border:1px solid #000000;"></canvas>
-         <canvas id="sq" width="100" height="200"></canvas>
-
-
-</div>
-      	<div id="tabs-2">   <canvas id="rgb"> </canvas>
-              <ul id="inputRGB">
-    <li> <input type="text" name="Red" value=""></li>
-    <li> <input type="text" name="Green" value=""></li>
-    <li> <input type="text" name="Blue" value=""></li>
-
-  </ul>
-            
-            <button id="editP" class="ui-button ui-corner-all ui-widget">A button element</button>
-</div>
+ 
   
   </div>
     
@@ -108,7 +90,7 @@
         
 <script>
     
-  
+  $( "#slider" ).slider();
 $( "#button" ).button();
     
 $( "#accordion" ).accordion({
