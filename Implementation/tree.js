@@ -15,6 +15,8 @@ function draw(){
     line(0,0,0,-150);
     translate(0,-150);
     rotate(PI/4);
+    line(0,0,0,150);
+    line(0,0,0,1000);
     
 
 }

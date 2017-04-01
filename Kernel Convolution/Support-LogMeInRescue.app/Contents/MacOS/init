@@ -1,0 +1,125 @@
+#!/bin/bash
+#
+# Support LogMeIn Rescue - init script
+#
+# Copyright (c) 2012-2015 LogMeIn, Inc. All rights reserved.
+# ===========================================================================
+
+# ===========================================================================
+function PrepareIcon
+{
+    local Folder FileSign
+
+    Folder="$(dirname "$1")"
+
+    cp "$1/Rescue.icns" "${Folder}/Rescue.icns"
+        
+    if [ ! -f "${Folder}/Rescue.ico" ]; then
+        if [ -f "$1/Rescue.ico" ]; then
+            cp "$1/Rescue.ico" "${Folder}/Rescue.ico"
+        else
+            cp "$1/Rescue.icns" "${Folder}/Rescue.ico"
+        fi
+    fi
+
+    FileSign="$(hexdump "${Folder}/Rescue.ico" |head -1)"
+
+    if [ "${FileSign::19}" != "0000000 69 63 6e 73" ]; then
+        rm "${Folder}/Rescue.icns"
+        "$1/Contents/Resources/ConvertWinIcoToIcns" "${Folder}/Rescue.ico" "${Folder}/Rescue.icns"
+    fi
+
+    sips -Z 32 -s format icns "${Folder}/Rescue.icns" --out "${Folder}/Rescue32.icns"
+}
+
+# ===========================================================================
+function GetQuotedParam
+{
+    sed -e "/$1/!d;s|.*[[:space:]]*$1[[:space:]]|$1 |;s/^$1 \"\([^\"]*\)\".*/\1/" "$2"
+}
+    
+# ===========================================================================
+function GetParam
+{
+    sed -e "/$1/!d;s|[[:space:]][[:space:]]*| |g;s/.* *$1 \([^ ]*\).*/\1/" "$2"
+}
+
+# ===========================================================================
+function PrepareParams
+{
+    local Folder
+
+    Folder="$(dirname "$1")"
+
+    xattr "$1" |grep com.logmein.rescue.params > /dev/null
+    if [ $? == 0 ]; then
+        xattr -p com.logmein.rescue.params "$1" > "${Folder}/params.txt"
+    fi
+
+    xattr "$1" |grep com.logmein.rescue.eula > /dev/null
+    if [ $? == 0 ]; then
+        xattr -p com.logmein.rescue.eula   "$1" > "${Folder}/eula.txt"
+    fi
+}
+
+# ===========================================================================
+function DownloadCustomization
+{
+    local Folder website logoid logotype iconid icontype
+
+    Folder="$1"
+    
+    if [ ! -f "${Folder}/params.txt" ]; then
+        return 0
+    fi
+
+    website=$(GetQuotedParam "-s" "${Folder}/params.txt")
+
+    website=$(GetQuotedParam "-s" "${Folder}/params.txt")
+    logoid=$(GetParam "-logoid" "${Folder}/params.txt")
+    logotype=$(GetParam "-logotype" "${Folder}/params.txt")
+    iconid=$(GetParam "-iconid" "${Folder}/params.txt")
+    icontype=$(GetParam "-icontype" "${Folder}/params.txt")
+    
+    curl -s -o "${Folder}/CustomLogo.bmp" "https://${website}/CallingCard/imageFromDB.aspx?imageid=${logoid}&imagetype=${logotype}"
+    curl -s -o "${Folder}/Rescue.ico"     "https://${website}/CallingCard/imageFromDB.aspx?imageid=${iconid}&imagetype=${icontype}"
+}
+
+# ===========================================================================
+
+    Init="$(dirname "$0")"
+
+    if [[ "${Init}" == /*var/tmp* ]]; then
+        "${Init}/Support-LogMeInRescue" $@ &
+        exit 0
+    fi
+
+    if [ -f "$1/Support-LogMeInRescue.app/Contents/MacOS/Support-LogMeInRescue" ]; then
+        "$1/Support-LogMeInRescue.app/Contents/MacOS/Support-LogMeInRescue" $@ &
+        exit 0
+    fi
+
+    Src="$(dirname "${Init}")"
+    Src="$(dirname "${Src}")"
+
+    rnd=`printf " - %04X" ${RANDOM}`
+    while [ -d "/var/tmp/LogMeIn Rescue${rnd}" ]; do
+        rnd=`printf " - %04X" ${RANDOM}`
+    done
+
+    InstDir="/var/tmp/LogMeIn Rescue${rnd}"
+
+    rm -rf     "${InstDir}"
+    mkdir -p   "${InstDir}"
+    chmod 0777 "${InstDir}"
+
+    cp -R "${Src}" "${InstDir}/Support-LogMeInRescue.app"
+    rm -r "${Src}"
+
+    PrepareParams "${InstDir}/Support-LogMeInRescue.app"   
+    DownloadCustomization "${InstDir}"
+    PrepareIcon "${InstDir}/Support-LogMeInRescue.app"
+
+    open "${InstDir}/Support-LogMeInRescue.app" --args "${InstDir}"
+
+# ===========================================================================

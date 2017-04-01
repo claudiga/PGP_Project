@@ -131,19 +131,15 @@ var newBlue = (topLeftB * matrix.tpl) + (topMidB * matrix.tpm) + (topRightB * ma
 
 
 
- newRed = newRed  * 0.9;
-    newGreen = newGreen * 0.7;
-    newBlue = newBlue * 7;
+ 
         
             
     
     grayscale = (newRed + newGreen + newBlue) / 3;     
-    pixels.data[i]  = grayscale;
-    pixels.data[i+1] = grayscale;
-    pixels.data[i+2] = grayscale;
+    pixels.data[i]  = grayscale;    pixels.data[i+1] = grayscale;
+   pixels.data[i+2] = grayscale;
 
-   
-
+        
 
         
     
