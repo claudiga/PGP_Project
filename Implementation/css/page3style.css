@@ -1,0 +1,181 @@
+body{
+
+}
+.Mainc{
+
+
+ width: 100%;
+ position:absolute;
+z-index: -1;
+height: 100%;
+background-color: #FFEBEE;
+
+
+}
+#canvas1{
+  position:absolute;
+
+
+left:200px;
+
+top:150px;
+}
+
+
+
+ #icons{
+
+     position: absolute;
+    list-style-type: none;
+    padding: 0;
+     margin: 0;
+     z-index: 1;
+
+
+
+}
+#rgb{
+width: 300px;
+height: 401px;
+  top: 150px;
+  left: 700px;
+
+}
+#hozline{
+  position:absolute;
+ left: 368px;
+    top: 125px;
+z-index: 2;
+}
+#hozline2{
+ position:absolute;
+ left: 368px;
+top: 230px;
+z-index: 2;
+    transform: scaleY(-1);
+
+
+}
+
+#tabs{
+  position:absolute;
+  width: 1000px;
+  margin-top: 150px;
+  margin-left: 650px;
+  background-color: #FFCDD2;
+    
+
+}
+#accordion{
+    
+    position: absolute;
+    top: 100px;
+    left: 5px;
+    width: 180px;
+    z-index: 3;
+    
+}
+#acborder{
+    
+    position: absolute;
+    height: 1000px;
+    width: 180px;
+    left: 5px;
+    top: 100px;
+    background-color:  red;
+    z-index: 1;
+}
+
+#banner{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 1px;
+    background-color: #FFCDD2;
+    z-index: 1;
+    
+}
+#icons{
+    position: absolute;
+    padding-left: 80%;
+    padding-top: 40px;
+}
+li{
+float: left; 
+margin: 10px;}
+
+#navBTs{
+    
+    position: absolute;
+    margin-top: 815px;
+    margin-left: 65%;
+    display: inline-block;
+    list-style: none;
+    
+}
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid #FFCDD2; 
+}
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+     border-right:10px solid #FFCDD2; 
+
+}
+#arrow-l{
+    position: absolute;
+    margin-top: 826px;
+    margin-left: 800px;
+    width: 0px;
+    height: 15px;
+}
+#arrow-r{
+
+    position: absolute;
+    margin-top: 826px;
+    margin-left: 1173px;
+    width: 0px;
+    height: 15px;
+    transform: scaleX(-1);
+}
+#prevBT{z-index:6;}
+#Navigation{ position: absolute;}
+
+#sq{
+    position: absolute;
+    left: 560px;
+    top: 233px;
+    
+}
+#inputRGB{
+    position: absolute;
+    margin: 200px;
+    top: 0px;
+    left: 350px;
+    list-style: none;
+    background-color: red;
+    z-index: 5;
+    
+}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
