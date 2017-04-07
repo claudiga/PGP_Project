@@ -41,10 +41,15 @@ img.onload = function () {
     
   //loop throught all n pixels; 
     
+
     
     for(var i = 0; i < data.length; i+=4){
         
         //for every pixel i..n
+        
+        
+    
+        
         
         var width = 1600 -1;
 
@@ -130,18 +135,26 @@ var newGreen = (topLeftG * matrix.tpl) + (topMidG * matrix.tpm) + (topRightG * m
 var newBlue = (topLeftB * matrix.tpl) + (topMidB * matrix.tpm) + (topRightB * matrix.tpr) + (midLeftB * matrix.mdl) + (middleB * matrix.mdm) + (midRightB * matrix.mdr) + (botLeftB * matrix.btl) + (botMidB * matrix.btm) + (botRightB * matrix.btr);
 
 
-
+//newRed =newRed /9;
+      //  newGreen= newGreen /9;
+      //  newBlue =  newBlue/9;
  
         
             
     
-    grayscale = (newRed + newGreen + newBlue) / 3;     
-    pixels.data[i]  = grayscale;    pixels.data[i+1] = grayscale;
-   pixels.data[i+2] = grayscale;
-
+    grayscale = (newRed + newGreen + newBlue) / 3; 
         
-
         
+//newRed = grayscale;    
+//newGreen = grayscale;        newBlue = grayscale;
+        
+        
+        
+  
+        
+  pixels.data[i]  = newRed; pixels.data[i+1] =newGreen;
+   pixels.data[i+2] = newBlue;
+
     
         
     }

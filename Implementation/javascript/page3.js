@@ -3,7 +3,8 @@ var size = 50;
 function setup(){
 
 var canv = createCanvas(700, 360);
-  background(155);
+    canv.parent('tabs');
+  //background(155);
     stroke(0);
   
 
@@ -55,7 +56,7 @@ branches(80);
     
 pop();
     
-   
+
 }
 
 function draw(){
