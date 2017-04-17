@@ -11,6 +11,15 @@
 <script src="javascript/jquery-ui.js" type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    
+    
+    <canvas id="banner"> </canvas>
+    
+    <ul id="icons">
+
+        <li> <img src="graphics/RestarTicon.png"></li>
+            <li> <img src="graphics/Musicicon.png"></li>
+        </ul>
 
     </head>
 
@@ -21,19 +30,14 @@
 <div class="Mainc">
 <link href="externel/c3.css" rel="stylesheet" type="text/css">
 
+<script type="text/javascript" src="javascript/KernelConvolution/kConvolution.js"></script>    
+    
+    
 <!-- Load d3.js and c3.js -->
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="externel/c3.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/page3style.css">
 <canvas class="Mainc"></canvas>
-    <canvas id="banner"> </canvas>
          <canvas id="acborder"> </canvas>
 
-<ul id="icons">
-
-        <li> <img src="graphics/RestarTicon.png"></li>
-            <li> <img src="graphics/Musicicon.png"></li>
-        </ul>
     
     
        
@@ -54,7 +58,17 @@
     
 
 
-
+<canvas id="Convolution" height="300" width="300"></canvas>
+    
+    <div id="kernelLog" title="Kernel">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+    
+    <div id="outputLog" title="Output">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>    
+    
+    <canvas id="Coutput" height="300" width="300"></canvas>
   <div id="tabs">
   	<ul id="unlist" data-tselected="hey">
   		
@@ -65,33 +79,22 @@
   	</ul>
   	<div id="tabs-1">
 <canvas id="spat" width="700" height="300" ></canvas>
- <img style="display: none;" id="spatial" src="graphics/spatialRec.jpg">
-        
-<div id="chart"></div>
-
-              <div id="slider"></div>
- 
-  
+<p id="textarea">  </p>
   </div>
-    
+
+      
+      
         <div id="arrow-l" class="arrow-left"></div>
         
 <div id="arrow-r" class="arrow-right"></div>
 <ul id="navBTs">   
-            <li> <button id="prevBT" class="ui-button ui-corner-all ui-widget">A button element</button> </li>
-            <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">A button element</button> </li>
+            <li> <button id="prevBT" class="ui-button ui-corner-all ui-widget">Prev</button> </li>
+            <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">Next</button> </li>
         </ul>
 
 </div>
         
-        <div id="Navagation">
-        
-        
-        
-
-
-        
-        </div>
+   
         
 <script src="javascript/page3.js"></script>
    
@@ -99,6 +102,8 @@
         
         
 <script>
+    
+   
   $("#tabs").tabs();  
 
     

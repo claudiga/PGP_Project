@@ -51,7 +51,7 @@ img.onload = function () {
     
         
         
-        var width = 1600 -1;
+        var width = 1600 ;
 
 
 
@@ -59,26 +59,26 @@ img.onload = function () {
     //all top pixels RGB 
 
     var reds = i, greens =i+1 ,blues = i+2;
-
+     //   console.log(i)
 
     // top left 
 
-    topLeftR = data[reds-width];
-    topLeftG = data[greens - width];
-    topLeftB = data[blues - width];
+    topLeftR = data[reds-width+4];
+    topLeftG = data[greens - width+4];
+    topLeftB = data[blues - width+4];
 
 
     //top middle
 
-    topMidR = data[reds - width+4];
-    topMidG = data[greens - width+4];
-    topMidB = data[blues - width+4];
+    topMidR = data[reds - width];
+    topMidG = data[greens - width];
+    topMidB = data[blues - width];
 
     // top right
 
-    topRightR = data[reds - width+8];
-    topRightG = data[greens -  width+8];
-    topRightB = data[blues -  width+8];
+    topRightR = data[reds - width-4];
+    topRightG = data[greens -  width-4];
+    topRightB = data[blues -  width-4];
 
     //middle left 
 
@@ -102,23 +102,23 @@ img.onload = function () {
 
     //bottom left
 
-    botLeftR = data[reds + width];
-    botLeftG = data[greens + width];
-    botLeftB = data[blues + width];
+    botLeftR = data[reds + width+4];
+    botLeftG = data[greens + width+4];
+    botLeftB = data[blues + width+4];
 
 
     //bottom middle 
 
-    botMidR = data[reds + width+4];
-    botMidG = data[greens + width+ 4];
-    botMidB = data[blues + width+4];
+    botMidR = data[reds + width];
+    botMidG = data[greens + width];
+    botMidB = data[blues + width];
 
 
     // bottom right
 
-    botRightR = data[reds + width + 8];
-    botRightG = data[greens + width + 8];
-    botRightB = data[blues + width + 8];
+    botRightR = data[reds + width -4];
+    botRightG = data[greens + width - 4];
+    botRightB = data[blues + width - 4];
 
     //mask used[ 1  0  -1 ]
 

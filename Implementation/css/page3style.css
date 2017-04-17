@@ -13,9 +13,6 @@ background-color: #FFEBEE;
 
 }
 
-
-
-
  #icons{
 
      position: absolute;
@@ -24,17 +21,15 @@ background-color: #FFEBEE;
      margin: 0;
      z-index: 1;
 
-
-
 }
 
 
 
 #tabs{
-  position:absolute;
-  width: 1000px;
-  margin-top: 150px;
-  margin-left: 650px;
+   position:absolute;
+  width: 850px;
+ top: 120px;
+  left: 550px;
   background-color: #FFCDD2;
     
 
@@ -80,15 +75,23 @@ margin: 10px;}
 #navBTs{
     
     position: absolute;
-    margin-top: 815px;
-    margin-left: 65%;
+    top: 600px;
+    left: 50%;
     display: inline-block;
     list-style: none;
     
 }
 
+#arrow-r
 
-#prevBT{z-index:6;}
+#prevBT{
+z-index:6;
+    
+}
+#nextBT{
+
+    
+}
 #Navigation{ position: absolute;}
 
 #defaultCanvas0{
@@ -96,5 +99,20 @@ margin: 10px;}
     bottom: 320px;
     
 }
+#Convolution{
+    position: absolute;
+    left: 200px;
+    top: 150px;
+    
+}
+#Coutput{
+    position: absolute;
+    left: 200px;
+    top: 500px;
+    
+}
 
-
+#textarea{
+ position:absolute;
+    
+}

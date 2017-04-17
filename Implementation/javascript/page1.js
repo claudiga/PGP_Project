@@ -257,33 +257,4 @@ var drawColor =  function(){
          
      });}
                              
-function setup(){
 
-
-
-
-
-
-}
-
-function draw(){
-/**  var c = document.getElementById("hozline");
-  var ctx = c.getContext("2d");
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(linex, 50);
-  ctx.stroke();
-
-  var c2 = document.getElementById("hozline2");
-  var ctx2 = c2.getContext("2d");
-  ctx2.beginPath();
-  ctx2.moveTo(0, 0);
-  ctx2.lineTo(linex, 50);
-  ctx2.stroke();
-
-if(linex < 150)
-
-linex +=1 ;
-console.log(linex);
-**/
-}
