@@ -44,6 +44,14 @@ var tutorial = function(para,clicked){
     treeCtx.stroke();
     
     
+    treeCtx.beginPath();
+treeCtx.moveTo(135,130);
+treeCtx.lineTo(72,165);
+          treeCtx.strokeStyle ='#FF0000';
+treeCtx.stroke();
+      
+    
+    
     textarea.innerHTML = para[0];
     
     if(!clicked){
@@ -54,6 +62,11 @@ var tutorial = function(para,clicked){
   
       
       textarea.innerHTML = para[i];
+      if(i ==1){
+
+      
+      }
+      
   i+=1;
   });
      $( "#prevBT" ).click( function( event ) {
