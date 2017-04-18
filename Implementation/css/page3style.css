@@ -1,8 +1,7 @@
 body{
-
+margin: 0px;
 }
 .Mainc{
-
 
  width: 100%;
  position:absolute;
@@ -27,7 +26,8 @@ background-color: #FFEBEE;
 
 #tabs{
    position:absolute;
-  width: 850px;
+  width: 70%;
+    height: 80%;
  top: 120px;
   left: 550px;
   background-color: #FFCDD2;
@@ -46,7 +46,7 @@ background-color: #FFEBEE;
 #acborder{
     
     position: absolute;
-    height: 1000px;
+    height: 85%;
     width: 180px;
     left: 5px;
     top: 100px;
@@ -55,7 +55,7 @@ background-color: #FFEBEE;
 }
 
 #banner{
-    width: 100%;
+    width: 99%;
     height: 100px;
     position: absolute;
     top: 1px;
@@ -114,5 +114,6 @@ z-index:6;
 
 #textarea{
  position:absolute;
+    top: 450px
     
 }
