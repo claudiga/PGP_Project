@@ -3,19 +3,20 @@
 
 
 <head>
-    
-    
     <script src="javascript/p5.js" type="text/javascript"></script>
       <script src="javascript/p5.dom.js" type="text/javascript"></script>
        <script src="javascript/jquery.js" type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css">
 <script src="javascript/jquery-ui.js" type="text/javascript"></script>
-<script type="text/javascript" src="javascript/KernelConvolution/kConvolution.js"></script>    
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-    
-    <script id="pageScript" src="javascript/page3.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <script type="text/javascript" src="javascript/tutorials.js"></script>    
+    <link rel="stylesheet" type="text/css" href="css/page5style.css">
+    
+    <script type="text/javascript" src="javascript/KernelConvolution/kConvolutionWrap.js"></script>    
+  
+    
     <canvas id="banner"> </canvas>
     
     <ul id="icons">
@@ -24,26 +25,32 @@
             <li> <img src="graphics/Musicicon.png"></li>
         </ul>
 
-    <link id="pageStyle" rel="stylesheet" type="text/css" href="css/page3style.css">
     
-    
+   
     </head>
 
+    
+    
+    
+    
+    
+    
     <body>
         
       <div id="bodyy">
         
 <div class="Mainc">
+<link href="externel/c3.css" rel="stylesheet" type="text/css">
 
 
-  <script type="text/javascript" src="javascript/tutorials.js"></script>     
+  
     
-<script id="pageScript" src="javascript/page3.js"></script>
+
 
 <canvas class="Mainc"></canvas>
          <canvas id="acborder"> </canvas>
 
-    <link id="pageStyle" rel="stylesheet" type="text/css" href="css/page3style.css">
+    
     
        
 <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
@@ -90,72 +97,94 @@
     
 
 
-<canvas id="Convolution" height="300" width="300"></canvas>
-    
-    <div id="kernelLog" title="Kernel">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-        
-            <audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-</audio>
-</div>
-    
-    <div id="outputLog" title="Output">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-    <audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-</audio>
-    </div>  
-    
-<div id="output2" title="out2">
-    
-    <p> 
-    
-        We place the new pixel into a new canvas 
-    
-    </p>
-    </div>   
-    
-
-    
+     <canvas id="Convolution" height="300" width="300"></canvas>
     <canvas id="Coutput" height="300" width="300"></canvas>
+        
+<script id="pageScript" src="javascript/page5.js"></script>
+    
+  
   <div id="tabs">
   	<ul id="unlist" data-tselected="hey">
   		
-  		<li><a href="#tabs-1">Convolution</a></li>
+  		<li><a href="#tabs-1">view pixel</a></li>
   		
          
           
   	</ul>
   	<div id="tabs-1">
-<canvas id="spat" width="700" height="300" ></canvas>
-<p id="textarea">  </p>
-  </div>
 
+<p id="textarea">Choose a prearranged convolution or write your own </p>
+        
+        
+        
+  </div>
       
-      <div></div>
       
       
+     <ul id="matrix">
       
+      <li> <input id="one" name="value" value="-1"></li>
+       <li> <input id="two" name="value" value="-2">   </li>
+       <li> <input id="three" name="value" value="-1">   </li>
+       <li> <input id="four" name="value" value="0">   </li>
+          <li> <input id="five" name="value" value="0">   </li>
+          <li> <input id="six" name="value" value="0">   </li>
+          <li> <input id="seven" name="value" value="1">   </li>
+          <li> <input id="eight" name="value" value="2">   </li>
+          <li> <input id="nine" name="value" value="1">   </li>
+     
+      
+      </ul>
+      
+      <button id="go" class="ui-button ui-corner-all ui-widget">Go</button>
+     <fieldset>  
+
+     
+<label for="matrixC">Select a speed:</label>
+<select name="matrixC" id="kernels">
+  <option value="Vertical edges" selected>Vertical edges</option>
+  <option value="Horizental edges">Horizental Edges</option>
+  <option value="Horizental & Vertical" >Horizental & Vertical edges</option>
+  <option value="Blur">Blur</option>
+  <option value="Sharpen">Sharpen</option>
+    <option value="Sobel">Sobel</option>
+</select>
+     
+     
+          <label> Normalize</label>
+  <input type="checkbox" id="checknorm">
+<input type="number" id="norm" size="4" value="1"><br>
+      </fieldset>  
+     <p id="dynamicText"></p>     
+          
         <div id="arrow-l" class="arrow-left"></div>
         
 <div id="arrow-r" class="arrow-right"></div>
 <ul id="navBTs">   
             <li> <button id="prevBT" class="ui-button ui-corner-all ui-widget">Prev</button> </li>
-            <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">Next</button> </li>
+           
         </ul>
-<button id="nextPage" class="ui-button ui-corner-all ui-widget">Next Page</button>
+    <input id="picloader" type='file' accept='image/*' onchange="loadPic(event)">  
+
 </div>
         
     
-        
+
    
 
         
         
 <script>
-    
-   
+    $( "#one" ).spinner();
+$( "#two" ).spinner();
+    $( "#three" ).spinner();
+    $( "#four" ).spinner();
+    $( "#five" ).spinner();
+    $( "#six" ).spinner();
+    $( "#seven" ).spinner();
+    $( "#eight" ).spinner();
+    $( "#nine" ).spinner();
+   $( "#kernels" ).selectmenu();
   $("#tabs").tabs();  
 
     
@@ -173,7 +202,9 @@ $( "#accordion" ).accordion({
       "collapsible": "true"
   }
 });
-$( "#accordion" ).accordion( "option", "active", 1 );
+
+    $( "#accordion" ).accordion( "option", "active", 2 );
+    
 $("#tabs a").click(function() {
 
 

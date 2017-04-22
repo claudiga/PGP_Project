@@ -6,7 +6,7 @@
     <script src="javascript/p5.js" type="text/javascript"></script>
       <script src="javascript/p5.dom.js" type="text/javascript"></script>
        <script src="javascript/jquery.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="css/page2style.css">
+<link rel="stylesheet" type="text/css" href="css/page1style.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css">
 <script src="javascript/jquery-ui.js" type="text/javascript"></script>
 
@@ -44,17 +44,44 @@
        
 <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
 	<h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-active ui-state-active" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="true" aria-expanded="true" tabindex="1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>First</h3>
-	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style="display: block; height: 22.8px;"><div>
-        what is a pixel</div>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style="display: block; height: 22.8px;"><div id="currPage">
+        <h3>  what is a pixel  </h3>
+        </div>
         <hr>
-        <div> what is a pixel </div> </div>
+       
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+    </div>
    
-    
+
     
 	<h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-collapsed ui-corner-all" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Second</h3>
-	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none; height: 22.8px;">spatial frequency.</div>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none; height: 22.8px;">
+        
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+        <hr>
+       
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+    
+    </div>
 	<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-5" aria-controls="ui-id-6" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Third</h3>
-	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-6" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none; height: 22.8px;">convolution</div>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-6" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none; height: 22.8px;">
+        
+ <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+        <hr>
+       
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+    
+    </div>
 </div> 
     
 
@@ -88,29 +115,21 @@
 
   </ul>
             
-            <button id="editP" class="ui-button ui-corner-all ui-widget">A button element</button>
+            <button id="editP" class="ui-button ui-corner-all ui-widget">set pixel</button>
 </div>
   
   </div>
     
-        <div id="arrow-l" class="arrow-left"></div>
+        
         
 <div id="arrow-r" class="arrow-right"></div>
 <ul id="navBTs">   
-            <li> <button id="prevBT" class="ui-button ui-corner-all ui-widget">A button element</button> </li>
-            <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">A button element</button> </li>
+            
+            <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">next</button> </li>
         </ul>
 
 </div>
         
-        <div id="Navagation">
-        
-        
-        
-        
-
-        
-        </div>
         
 <script src="javascript/page1.js"></script>
         
@@ -129,6 +148,7 @@ $( "#accordion" ).accordion({
       "collapsible": "true"
   }
 });
+        $( "#accordion" ).accordion( "option", "active", 0 );
 
 $("#tabs a").click(function() {
 

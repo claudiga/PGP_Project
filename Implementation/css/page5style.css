@@ -2,21 +2,14 @@ body{
 margin: 0px;
 }
 .Mainc{
-width: 100%;
+
+ width: 100%;
  position:absolute;
 z-index: -1;
 height: 100%;
 background-color: #FFEBEE;
 
 
-}
-#canvas1{
-  position:absolute;
-
-
-left:200px;
-
-top:150px;
 }
 
 
@@ -32,31 +25,10 @@ top:150px;
     margin-top: 40px;
 
 }
-#rgb{
-width: 300px;
-height: 401px;
-  top: 150px;
-  left: 700px;
 
-}
-#hozline{
-  position:absolute;
- left: 368px;
-    top: 125px;
-z-index: 2;
-}
-#hozline2{
- position:absolute;
- left: 368px;
-top: 230px;
-z-index: 2;
-    transform: scaleY(-1);
-
-
-}
 
 #tabs{
-  position:absolute;
+   position:absolute;
   width: 60%;
     height: 80%;
  top: 120px;
@@ -67,7 +39,7 @@ z-index: 2;
 }
 #accordion{
     
-    position: relative;
+    position: fixed;
     top: 100px;
     left: 5px;
     width: 180px;
@@ -78,9 +50,9 @@ z-index: 2;
 }
 
 #accordion div{
-   //   display: block;
+
     
-    overflow: hidden;
+   overflow: hidden;
     white-space: nowrap;
 
   padding: 0px;
@@ -109,13 +81,14 @@ z-index: 2;
 }
 
 
+
 hr{
     padding: 0;
     margin: 0;
 }
 #acborder{
     
-        position: absolute;
+    position: absolute;
     height: 85%;
     width: 180px;
     left: 5px;
@@ -125,7 +98,7 @@ hr{
 }
 
 #banner{
-    width: 100%;
+    width: 99%;
     height: 100px;
     position: absolute;
     top: 1px;
@@ -151,87 +124,90 @@ margin: 10px;
     list-style: none;
     
 }
+
+
+
 .arrow-left {
   width: 0; 
   height: 0; 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent; 
   
-    border-right:10px solid #B71C1C; 
-}
-.arrow-right {
-  width: 0; 
-  height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent; 
-  
-    border-right:10px solid #B71C1C; 
-
+  border-right:10px solid #B71C1C; 
 }
 #arrow-l{
-   position: absolute;
+    position: absolute;
     top: 83%;
     left: 73%;
     width: 0px;
     height: 15px;
     display: show;
 }
-#arrow-r{
 
-z-index: 3;
+
+
+
+
+
+#Convolution{
     position: absolute;
-  top: 83%;
-    left: 88.3%;
-    width: 0px;
-    height: 15px;
-    transform: scaleX(-1);
-    display: show;
-}
-
-#spat{padding-left: 42px;}
-#sq{
-    position: absolute;
-    left: 560px;
-    top: 233px;
-    
-}
-#inputRGB{
-    position: absolute;
-    margin: 200px;
-    top: 0px;
-    left: 350px;
-    list-style: none;
-    background-color: red;
-    z-index: 5;
-    
-}
-
-path { 
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-#spatialText{
-    position: fixed;
-    top: 200px;
     left: 200px;
-    width: 300px;
-    padding-bottom: 300px;
+    top: 150px;
     
-    background-color: #FFCDD2;
+}
+#Coutput{
+    position: absolute;
+    left: 200px;
+    top: 460px;
     
 }
 
-#spatialText p{
+#textarea{
+ position:inherit;
+    top: 45%;
+    margin-right: 500px;
+
+}
+
+
+#crop{
     
+    position: absolute;
+    top: 55%;
+    left: 80%;
     
+}
+.ui-selectmenu-open{
+    vertical-align: top;
+    align-content: center;
+    width: 1px;
+    display: block;
+}
+
+
+#matrix{
+   
+  list-style-type: none;
+  columns: 3;
+    margin-right: 200px;
+    
+}
+
+
+.ui-spinner{
+    color: red;
+}
+.ui-spinner-up{
+    background-color: white;
+}
+.ui-spinner-down{
+    background-color: black;
+}
+
+input[type=number]{
+    width: 40px;
+} 
+
+#norm{
+    display: none;
 }

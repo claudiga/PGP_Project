@@ -1,10 +1,8 @@
 body{
-
+margin: 0px;
 }
 .Mainc{
-
-
- width: 100%;
+width: 100%;
  position:absolute;
 z-index: -1;
 height: 100%;
@@ -21,8 +19,6 @@ left:200px;
 top:150px;
 }
 
-
-
  #icons{
 
      position: absolute;
@@ -30,8 +26,9 @@ top:150px;
     padding: 0;
      margin: 0;
      z-index: 1;
-
-
+     position: absolute;
+    margin-left: 80%;
+    margin-top: 40px;
 
 }
 #rgb{
@@ -46,6 +43,7 @@ height: 401px;
  left: 368px;
     top: 125px;
 z-index: 2;
+    display: none;
 }
 #hozline2{
  position:absolute;
@@ -53,35 +51,76 @@ z-index: 2;
 top: 230px;
 z-index: 2;
     transform: scaleY(-1);
-
+display: none;
 
 }
 
 #tabs{
   position:absolute;
-  width: 1000px;
-  margin-top: 150px;
-  margin-left: 650px;
+  width: 60%;
+    height: 80%;
+ top: 120px;
+  left: 600px;
   background-color: #FFCDD2;
     
 
 }
 #accordion{
     
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 5px;
     width: 180px;
     z-index: 3;
+   
+    
     
 }
-#acborder{
+
+#accordion div{
+
     
+   overflow: hidden;
+    white-space: nowrap;
+
+  padding: 0px;
+}
+
+#accordion div div:not(#currPage){
+    
+    background-color: #EF5350
+;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+   
+}
+#accordion div div h3{
+    
+   color: black;
+ 
+}
+#currPage{
+     background-color: #FFCDD2;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+    
+}
+
+
+
+hr{
+    padding: 0;
+    margin: 0;
+}
+#acborder{
+  
     position: absolute;
-    height: 1000px;
+    height: 85%;
     width: 180px;
     left: 5px;
-    top: 101px;
+    top: 100px;
     background-color:  red;
     z-index: 1;
 }
@@ -95,59 +134,55 @@ z-index: 2;
     z-index: 1;
     
 }
-#icons{
-    position: absolute;
-    padding-left: 80%;
-    padding-top: 40px;
-}
+
 li{
 float: left; 
-margin: 10px;}
+margin: 10px;
+ padding: 0px;
+    margin: 2px;
+}
 
 #navBTs{
-    
     position: absolute;
-    margin-top: 815px;
-    margin-left: 65%;
+    top: 80%;
+    left: 78.2%;
     display: inline-block;
     list-style: none;
     
 }
-.arrow-left {
-  width: 0; 
-  height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent; 
-  
-  border-right:10px solid #FFCDD2; 
-}
+
 .arrow-right {
   width: 0; 
   height: 0; 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent; 
   
-     border-right:10px solid #FFCDD2; 
+     border-right:10px solid #B71C1C; 
 
 }
-#arrow-l{
-    position: absolute;
-    margin-top: 826px;
-    margin-left: 800px;
-    width: 0px;
-    height: 15px;
-}
+
+
+
+
+
+
 #arrow-r{
-
+z-index: 3;
     position: absolute;
-    margin-top: 826px;
-    margin-left: 1173px;
+  top: 82%;
+    left: 84%;
     width: 0px;
     height: 15px;
     transform: scaleX(-1);
+    display: show;
 }
-#prevBT{z-index:6;}
-#Navigation{ position: absolute;}
+
+
+
+
+#rawpixels{
+   margin-top: 58px;
+}
 
 #sq{
     position: absolute;

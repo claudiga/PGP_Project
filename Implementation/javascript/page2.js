@@ -1,3 +1,6 @@
+$(window).ready(function() {
+	$(".loader").fadeOut("slow");
+})
 var getxp = function(context){
 var imd = context.getImageData(0,80,700,1);
 var length = imd.data.length;
@@ -123,4 +126,15 @@ $( "#restartP" ).on( "click", function( event, ui ) {
 
 } );
 
+    $( "#prevBT" ).click(function() {
+     window.location.href = "page1.html"; 
+    
+});
+    $( "#nextBT" ).click(function() {
+     window.location.href = "page3.html"; 
+    
+});
+      
+    
+    
 }

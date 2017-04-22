@@ -1,4 +1,8 @@
 $("#tabs").tabs();
+  var mouseclicked;
+var active = $( "#tabs" ).tabs( "option", "active" );
+
+
 var img2 = new Image();
 img2.src = 'graphics/bsquare.png';
 var img3 = new Image();
@@ -54,7 +58,7 @@ ctx.drawImage(img,0,0);
   ctxH2.lineTo(200, 115);
   ctxH2.stroke();
     
-    drawColor();
+    
 
    drawsquare(canvas);
 }
@@ -91,7 +95,7 @@ var  imdat = ctx.getImageData(x,y,w,h);
 
 
 var drawsquare = function(canvas){
-    var drawn = false;
+
 
     var posx, posy;
 
@@ -99,9 +103,14 @@ var drawsquare = function(canvas){
 var savedstate= [];
 
   //  window.alert(matrix)
+    
      canvas.addEventListener('mousemove', function(e) {
+document.getElementById("hozline").style.display = 'initial';
+         document.getElementById("hozline2").style.display = 'initial';
+    
+             if(!mouseclicked){
 
-    var rect = canvas.getBoundingClientRect();
+         var rect = canvas.getBoundingClientRect();
     posx = e.clientX - rect.left ;
     posy = e.clientY - rect.top ;
 
@@ -118,17 +127,9 @@ var savedstate= [];
          var tablist = document.getElementById('unlist');
          var tab = tablist.dataset.tselected;
 
-         if(!drawn ){
 
 
-
-     ctx.drawImage(img2,Math.floor(posx/16) * 16  ,Math.floor(posy/16) * 16);
-
-             drawn = true;
-         }else{
-
-
-        ctx.drawImage(img,0,0);
+        
 
              xax = Math.floor(posx/16) * 16 - 32;
              yax = Math.floor(posy/16) * 16 - 80;
@@ -141,11 +142,11 @@ var savedstate= [];
 
 
        //  ctx.fillStyle = 'rgb('+ red.toString()+ ','+green.toString()+',' + blue.toString() + ')';
+active = $( "#tabs" ).tabs( "option", "active" );
 
-
-if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
+if(active == 0 && xax > -5 && xax < 330 && yax > -5 && yax < 230){ctx.drawImage(img,0,0);
              ctx.drawImage(img2,xax,yax);
-
+    
              var  squareCtx =  canvas.getContext('2d');
                var squareData =squareCtx.getImageData(xax  ,yax ,80,176);
 
@@ -192,10 +193,11 @@ if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
 
 }else if (tab.includes('view')) {
 
+  
 
 
 
-
+ctx.drawImage(img,0,0);
   ctx.drawImage(img3,xax+32,yax+80)
    var matrixx = ImageData('canvas1',xax+40,yax+90,3,1);
 
@@ -217,44 +219,62 @@ if(tab.includes('View') && xax > -5 && xax < 330 && yax > -5 && yax < 230){
     elems[2].setAttribute('value',blue.toString());
    
 
-                     
-
-    
-    
-}else{
-    drawColor();
-    
-    
 }
 
-
-
-}
-
-     });
-
-    
-}
-
-var linex = 0;
-var tabsel
-
-var drawColor =  function(){
-    
-    
+         
      canvas.addEventListener('mousedown', function(e) {
-
+       
+ctx.drawImage(img,0,0);
     var rect = canvas.getBoundingClientRect();
-    posx = e.clientX - rect.left - 200;
-    posy = e.clientY - rect.top -150;
+    posx = e.clientX - rect.left ;
+    posy = e.clientY - rect.top ;
 
          
       var  xax = Math.floor(posx/16) * 16 - 32;
           var  yax = Math.floor(posy/16) * 16 - 80;
          
          
-         ctx.fillRect(xax+32,yax+80,16,16);
+         ctx.strokeRect(xax+33,yax+81,13,13);
          
-     });}
+ 
+         
+         if(mouseclicked){mouseclicked= false}else{mouseclicked=true}
+    
+         
+     });         
+
+    
+    
+}
+
+ 
+
+
+     });
+
+           $( "#editP" ).click(function() {
+               if(mouseclicked){
+
+                   var inputrgb = document.getElementById('inputRGB');
+    
+    var elems = inputrgb.getElementsByTagName('input');
+    
+  red = elems[0].value;
+ green =elems[1].value;
+        blue =    elems[2].value;        
+                   
+                   ctx.fillStyle = 'rgb(' + red +','+ green +','+ blue +')'
+                 ctx.fillRect(xax+32,yax+80,16,16);
+                   
+                   img.src = canvas.toDataURL()
+               }
+});
+
+}
+
+$( "#nextBT" ).click(function() {
+     window.location.href = "page2.html"; 
+    
+});
                              
 

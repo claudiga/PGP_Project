@@ -2,7 +2,8 @@ body{
 margin: 0px;
 }
 .Mainc{
-width: 100%;
+
+ width: 100%;
  position:absolute;
 z-index: -1;
 height: 100%;
@@ -10,17 +11,8 @@ background-color: #FFEBEE;
 
 
 }
-#canvas1{
-  position:absolute;
 
-
-left:200px;
-
-top:150px;
-}
-
-
- #icons{
+  #icons{
 
      position: absolute;
     list-style-type: none;
@@ -32,31 +24,10 @@ top:150px;
     margin-top: 40px;
 
 }
-#rgb{
-width: 300px;
-height: 401px;
-  top: 150px;
-  left: 700px;
 
-}
-#hozline{
-  position:absolute;
- left: 368px;
-    top: 125px;
-z-index: 2;
-}
-#hozline2{
- position:absolute;
- left: 368px;
-top: 230px;
-z-index: 2;
-    transform: scaleY(-1);
-
-
-}
 
 #tabs{
-  position:absolute;
+   position:absolute;
   width: 60%;
     height: 80%;
  top: 120px;
@@ -67,7 +38,7 @@ z-index: 2;
 }
 #accordion{
     
-    position: relative;
+    position: fixed;
     top: 100px;
     left: 5px;
     width: 180px;
@@ -78,9 +49,9 @@ z-index: 2;
 }
 
 #accordion div{
-   //   display: block;
+
     
-    overflow: hidden;
+   overflow: hidden;
     white-space: nowrap;
 
   padding: 0px;
@@ -109,13 +80,14 @@ z-index: 2;
 }
 
 
+
 hr{
     padding: 0;
     margin: 0;
 }
 #acborder{
     
-        position: absolute;
+    position: absolute;
     height: 85%;
     width: 180px;
     left: 5px;
@@ -125,7 +97,7 @@ hr{
 }
 
 #banner{
-    width: 100%;
+    width: 99%;
     height: 100px;
     position: absolute;
     top: 1px;
@@ -133,6 +105,7 @@ hr{
     z-index: 1;
     
 }
+
 
 li{
 float: left; 
@@ -151,22 +124,27 @@ margin: 10px;
     list-style: none;
     
 }
-.arrow-left {
-  width: 0; 
-  height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent; 
-  
-    border-right:10px solid #B71C1C; 
-}
 .arrow-right {
   width: 0; 
   height: 0; 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent; 
   
-    border-right:10px solid #B71C1C; 
+     border-right:10px solid #B71C1C; 
 
+}
+
+#nextPage{
+    position: absolute;
+    
+}
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid #B71C1C; 
 }
 #arrow-l{
    position: absolute;
@@ -176,8 +154,10 @@ margin: 10px;
     height: 15px;
     display: show;
 }
-#arrow-r{
 
+
+
+#arrow-r{
 z-index: 3;
     position: absolute;
   top: 83%;
@@ -188,50 +168,41 @@ z-index: 3;
     display: show;
 }
 
-#spat{padding-left: 42px;}
-#sq{
-    position: absolute;
-    left: 560px;
-    top: 233px;
-    
-}
-#inputRGB{
-    position: absolute;
-    margin: 200px;
-    top: 0px;
-    left: 350px;
-    list-style: none;
-    background-color: red;
-    z-index: 5;
+#prevBT{
+z-index:6;
     
 }
 
-path { 
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-}
 
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-#spatialText{
-    position: fixed;
-    top: 200px;
+#Convolution{
+    position: absolute;
     left: 200px;
-    width: 300px;
-    padding-bottom: 300px;
+    top: 150px;
     
-    background-color: #FFCDD2;
+}
+#Coutput{
+    position: absolute;
+    left: 200px;
+    top: 460px;
     
 }
 
-#spatialText p{
+#textarea{
+ position:absolute;
+    top: 15%;
+    margin-right: 500px;
     
+}
+#cropped{
+    position: absolute;
+    left: 200px;
+    top: 300px;
+    display: none;
+}
+#crop{
+    
+    position: absolute;
+    top: 55%;
+    left: 80%;
     
 }

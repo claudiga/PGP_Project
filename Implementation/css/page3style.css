@@ -12,6 +12,7 @@ background-color: #FFEBEE;
 
 }
 
+
  #icons{
 
      position: absolute;
@@ -19,29 +20,67 @@ background-color: #FFEBEE;
     padding: 0;
      margin: 0;
      z-index: 1;
+     position: absolute;
+    margin-left: 80%;
+    margin-top: 40px;
 
 }
-
 
 
 #tabs{
    position:absolute;
-  width: 70%;
+  width: 60%;
     height: 80%;
  top: 120px;
   left: 550px;
   background-color: #FFCDD2;
-    
 
 }
 #accordion{
     
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 5px;
     width: 180px;
     z-index: 3;
+   
     
+    
+}
+
+#accordion div{
+
+    
+   overflow: hidden;
+    white-space: nowrap;
+
+  padding: 0px;
+}
+
+#accordion div div:not(#currPage){
+    
+    background-color: #EF5350
+;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+   
+}
+#accordion div div h3{
+    
+   color: black;
+ 
+}
+#currPage{
+     background-color: #FFCDD2;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+    
+}
+hr{
+    padding: 0;
+    margin: 0;
 }
 #acborder{
     
@@ -63,37 +102,81 @@ background-color: #FFEBEE;
     z-index: 1;
     
 }
-#icons{
-    position: absolute;
-    padding-left: 80%;
-    padding-top: 40px;
-}
+
 li{
 float: left; 
-margin: 10px;}
+ padding: 0px;
+    margin: 2px;
+}
 
 #navBTs{
     
     position: absolute;
-    top: 600px;
-    left: 50%;
+    top: 75%;
+    left: 60%;
     display: inline-block;
     list-style: none;
-    
+}
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+     border-right:10px solid #B71C1C; 
+
 }
 
-#arrow-r
-
-#prevBT{
-z-index:6;
+#nextPage{
+    position: relative;
+    top: 333px;
+    left: 80%;
+ 
     
 }
-#nextBT{
-
-    
+.arrow-left {
+   width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid #B71C1C; 
 }
-#Navigation{ position: absolute;}
+#arrow-l{
+    position: absolute;
+    top: 77.6%;
+    left: 63%;
+    width: 0px;
+    height: 15px;
+    display: show;
+}
 
+
+
+#arrow-r{
+z-index: 3;
+    position: absolute;
+  top: 77.5%;
+    left: 78%;
+    width: 0px;
+    height: 15px;
+    transform: scaleX(-1);
+    display: show;
+}
+#kernelLog{
+   overflow: hidden;
+padding: 3px; 
+}
+
+#outputLog{
+overflow: hidden;
+padding: 3px;
+}
+
+li{
+   
+     
+}
 #defaultCanvas0{
     position: relative;
     bottom: 320px;
@@ -114,6 +197,6 @@ z-index:6;
 
 #textarea{
  position:absolute;
-    top: 450px
+    top: 500px
     
 }

@@ -22,23 +22,9 @@ outputIm.width = 300;
 treePic = new Image();
 treePic.src = 'graphics/tree.png';
 
-memtree = document.createElement('canvas');
-memtree.height = treePic.height;
-memtree.width = treePic.width;
-memtreectx = memtree.getContext('2d')
-treePic.onload = function(){
-
-memtreectx.drawImage(treePic,0,0)
-}
 
 
-
-
-
-
-
-
-mtrx = {"tpl":0,"tpm":0, "tpr":0,"mdl":1,"mdm":0,"mdr":-1,"btl":0,"btm":0,btr:0}
+mtrx = {"tpl":0,"tpm":0, "tpr":0,"mdl":0,"mdm":1,"mdr":0,"btl":0,"btm":0,btr:0}
 
 
 
@@ -73,17 +59,6 @@ for(var i=0; i<width; i++) {
 }
 
 
-    
-   var  memc = document.createElement('canvas');
-    var memctx = memc.getContext('2d');
-    memc.height = 300;
-    memc.width = 300;
-    
-    outputIm.onload = function(){
-    memctx.drawImage(outputIm,0,0)
-    }
-
-    
 
 
 
@@ -92,8 +67,10 @@ for(var i=0; i<width; i++) {
 
 
 
-var tutorial = function(para,x,y,index){
 
+
+var tutorial = function(para,clicked,x,y){
+   var i = 1;
     
     //red
     
@@ -102,9 +79,7 @@ var tutorial = function(para,x,y,index){
     textarea = document.getElementById('textarea');
     tree = document.getElementById('defaultCanvas0')
     treeCtx = tree.getContext('2d');
-   
     treeCtx.save();
-     treeCtx.beginPath()
     treeCtx.scale(1.5,1.5);
     treeCtx.beginPath();
     treeCtx.arc(135,130,20,0,2*Math.PI);
@@ -125,97 +100,42 @@ var tutorial = function(para,x,y,index){
     treeCtx.fillStyle = '#4167f4';
     treeCtx.fill();
     treeCtx.stroke();
-     treeCtx.closePath()
+    
     //
   treeCtx.restore()
    
     //top
-   
+    
  
     textarea.innerHTML = para[0];
      
     
     var newRed = 0; var newGreen = 0; var newBlue = 0; var topR =0; var midR = 0; var botR = 0; var topG = 0; var midG = 0; var botG = 0; var topB = 0; midB = 0; botB = 0;  
     
-    
+      if(clicked){
+            
+      i = 0;
+   }
+  
     
    
 //  window.alert(i)
-
-  treeCtx.save()
-      switch(index){
-              
-            case 1:
-        stages.stage1(para,x,y)
-         index+=1;
-        break;
-    case 2:
-        stages.stage2(para,x,y)
-         index+=1;
-        break;
-    case 3:
-        stages.stage3(para,x,y)
-         index+=1;
-        break;
-    case 4:
-        stages.stage4(para,x,y)
-         index+=1;
-        break;
-    case 5:
-       stages.stage5(para,x,y)
-      }
-      
+  $( "#nextBT" ).click( function( event ) {
+         
+    
   
-
-}
-//}
-
-
-
-kernel.onload = function(){   
-imageurl = "graphics/bart.jpg";    
-src = 'Convolution';
-dest = 'Coutput'
-convolut(mtrx,imageurl,src,dest);
-     
-     canvas = document.getElementById(src)
-     output = document.getElementById(dest);
+      
+      
+      
+      
+      
     
-    
-    
-    drawsquare(canvas,output,tutorial);
-    $( "#kernelLog" ).dialog(); 
-    
-    $( "#kernelLog" ).dialog({
-  close: function( event, ui ) {$( "#outputLog" ).dialog(); 
-
-                                 
-   $( "#outputLog" ).dialog({
-position: { my: "left top", at: "left bottom", of: canvas }
-});                                },
-position: { my: "right top", at: "left top", of: canvas }
-});    
-
- }
-
-
-
-var stages = {
-
-stage1: function(para,x,y){
-
-
-
-
- document.getElementById('nextBT').innerHTML = 'next';
-        
-    treeCtx.save()
-        
-        treeCtx.fillStyle = 'white';
-        treeCtx.beginPath()
-          textarea.innerHTML = para[1];
+      
+      if(i == 1){
+           document.getElementById('nextBT').innerHTML = 'next';
+          textarea.innerHTML = para[i];
           
-        
+          treeCtx.save();
            treeCtx.scale(1.5,1.5);    
 treeCtx.save()
 
@@ -223,15 +143,15 @@ treeCtx.save()
     treeCtx.fillText('Top',5,175);
   //  
     // top
-  
+    
     
     treeCtx.fillText('Top',230,230);
     //top
         treeCtx.fillText('Top',380,395);
-  treeCtx.restore()
+
     
     //mid
-   
+    treeCtx.restore()
     
     treeCtx.fillText('Mid',120,170);
     
@@ -246,7 +166,7 @@ treeCtx.save()
     
     
     //bot
-    treeCtx.save()
+    
       treeCtx.rotate(Math.PI / 6);
     treeCtx.fillText('Bot',210,45);
     
@@ -259,17 +179,13 @@ treeCtx.save()
      treeCtx.fillText('Bot',578,-174);
     treeCtx.restore();
           treeCtx.restore()
+      }
+      
+      else if(i ==2){
 
-treeCtx.closePath();
-treeCtx.restore()
+          
+          
 
-},
-    stage2: function(para,x,y){
-        
-        
-        treeCtx.beginPath()
-        
-         textarea.innerHTML = para[2]
                canvasCh = document.getElementById('Convolution')
          chCtx = canvasCh.getContext('2d')
          chData =chCtx.getImageData(x,y,36,36).data;
@@ -446,11 +362,15 @@ newBlue = (topLeftB * matrix.tpl) + (topMidB * matrix.tpm) + (topRightB * matrix
           
           botB = (botLeftB * matrix.btl) + (botMidB * matrix.btm) + (botRightB * matrix.btr);
           
-        treeCtx.closePath()
-    },
-    stage3: function(para,x,y){
-      treeCtx.beginPath()
-         textarea.innerHTML = para[3]
+          
+      }
+      
+      else if(i ==3){
+       //      window.alert(newRed)
+             
+             
+             
+       
                     treeCtx.save()
           
             treeCtx.scale(1.5,1.5);
@@ -571,22 +491,9 @@ treeCtx.stroke();
           treeCtx.restore()
           
           
-      treeCtx.closePath()
-        
-        
-    },
-    stage4: function(para,x,y){
-        
-          var cout = document.getElementById('Coutput');
-        
- var ctxout = cout.getContext('2d');
-    
-        
-        
-       
-        treeCtx.save()
-       textarea.innerHTML = para[4]
-         treeCtx.save()
+      
+      }else if(i == 4){
+          treeCtx.save()
           treeCtx.scale(1.5,1.5);
           treeCtx.save()
           treeCtx.fillStyle = "white";
@@ -594,39 +501,84 @@ treeCtx.stroke();
      treeCtx.fillText( newGreen, 340,68);       
         treeCtx.fillText( newBlue, 553,135);  
           treeCtx.restore()
-          ctxout.fillStyle = 'rgb('+ newRed + ','+ newGreen + ',' + newBlue + ')'
-           ctxout.fillRect(x+12,y+12,12,12)
-               memctx.fillStyle = 'rgb('+ newRed + ','+ newGreen + ',' + newBlue + ')'
-           memctx.fillRect(x+12,y+12,12,12)
+          
           $( "#output2" ).dialog(); 
           
           $( "#output2" ).dialog({
-              
-      
-              
 position: { my: "left top", at: "left bottom", of: canvas }
 }); 
     document.getElementById('arrow-r').style.display = 'initial';
           document.getElementById('nextBT').innerHTML = 'restart';
-        
-        
-        
           treeCtx.restore()
-          treeCtx.restore()
-        
-        
-        
-        
-    },
- stage5: function(para,x,y){
-     
-     window.alert('Click on kernel to deselect and select again')
+          
+          
+          
+      }
     
-     return false;
+        if(i == 5){
+        
+        window.alert('restarting')
+    
+      //   $('#bodyy').load('page2.html #bodyy');
+        i =0
+            
+            
+        }
+      
+      
+  i+=1;
+      
+   
+      
+  });
+    
+    
+    
+    
+    
+     $( "#prevBT" ).click( function( event ) {
+        
+
+    i-=1;  
+         textarea.innerHTML = para[i-1];
+        
+
+  });
+      
+    }
+//}
+
+
+
+kernel.onload = function(){   
+imageurl = "graphics/bart.jpg";    
+src = 'Convolution';
+dest = 'Coutput'
+convolut(mtrx,imageurl,src,dest);
+     
+     canvas = document.getElementById(src)
+     output = document.getElementById(dest);
+    
+    
+    
+    drawsquare(canvas,output,tutorial);
+    $( "#kernelLog" ).dialog(); 
+    
+    $( "#kernelLog" ).dialog({
+  close: function( event, ui ) {$( "#outputLog" ).dialog(); 
+
+                                 
+   $( "#outputLog" ).dialog({
+position: { my: "left top", at: "left bottom", of: canvas }
+});                                },
+position: { my: "right top", at: "left top", of: canvas }
+});    
+    
+    
+    
+   
+  
  }
-}
-
-
 
 
 var drawsquare = function(canvas,ouput,tutorial){
@@ -651,6 +603,7 @@ var drawsquare = function(canvas,ouput,tutorial){
  var ctx = canvas.getContext('2d')
  var ctxOuput = output.getContext('2d');
 
+var oldcanvas = null;
 
      canvas.addEventListener('mousemove', function(e) {
 if(clicked == false){
@@ -665,80 +618,37 @@ if(clicked == false){
 
          
          ctx.drawImage(kernel,posx,posy);
-   ctxOuput.drawImage(memc,0,0);
-   // ctxOuput.putImageData(mem,0,0)
-    
+    ctxOuput.drawImage(outputIm,0,0);
+
          ctxOuput.strokeStyle="#FF0000";
          ctxOuput.strokeRect(posx+12,posy+12,12,12)
          
-        
+         console.log(clicked)
          }});
     
     canvas.addEventListener('mousedown', function(e) {
         ctx.strokeRect(posx+12,posy+12,12,12);
     
-    length = 5;    
-        
+  
+        tutorial(paragraphs,clicked,posx,posy);
 
-        var index = 0;
-            
-        
-           $( "#prevBT" ).click( function( event ) {
-         
-              index+=1;
-            
-               tutorial(paragraphs,posx,posy,index);
-               
-            // window.alert(index)
-               
-          });
-        
-          $( "#nextBT" ).click( function( event ) {
-         
-              index+=1;
-            
-               tutorial(paragraphs,posx,posy,index);
-          //    window.alert(index)
-          });
-        
-
-        
-// tutorial(paragraphs,posx,posy);
-        
-     //   clicked = false;
-   var c = document.getElementById('defaultCanvas0')
-        ct = c.getContext('2d')
-        
         if(clicked == true){
          
-        document.getElementById('nextBT').innerHTML = 'next';
         
-    index = 0;
-       ct.clearRect(0,0,c.width,c.height)
-      
-        ct.drawImage(treePic, 0,0);
+    var c = document.getElementById('defaultCanvas0')
+        ct = c.getContext('2d')
+        ct.clearRect(0,0,c.width,c.height)
+        ct.drawImage(treePic,0,0);
             
       
         
             document.getElementById('textarea').innerHTML ='';
-        clicked = false}else{ 
-            
-            
-           // ct.drawImage(treePic,0,0);
-          //  window.alert(55)
-            
+        clicked = false}else{
         clicked = true}
         
     });
-    $( "#prevBT" ).click(function() {
-     window.location.href = "page2.html"; 
     
-});
-$( "#nextPage" ).click(function() {
-     window.location.href = "page4.html"; 
-    
-});
-      
+
 }
 
 
