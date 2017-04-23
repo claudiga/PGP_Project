@@ -1,3 +1,9 @@
+bart = new Image();
+
+bart.src = 'graphics/spatv2.jpg'
+
+
+
 $(window).ready(function() {
 	$(".loader").fadeOut("slow");
 })
@@ -37,7 +43,6 @@ var length = imd.data.length;
 
 
 
-
     
 var increase = function( data,increase){
    
@@ -62,12 +67,48 @@ for(var i = 0; i < length; i+=4){
 
 
 window.onload = function(){
+    
+    
+    var drawbars = function(increase){
+    
+    var canvas = document.getElementById('spat');
+var context = canvas.getContext('2d');
+    
+    
+
+    size =  700/increase; 
+
+      
+        
+        context.clearRect(0,0,700,300)
+        
+    
+        for(x = 0; x <= 700; x+=size)
+{   
+
+  context.drawImage(bart,x,0,size,300);    
+    
+}
+        
+      
+      //  context.drawImage(bart,264,0);
+        //context.drawImage(bart,528,0);
+
+        
+
+    
+}
+
+    
+    
+    
+    
             
     var im = document.getElementById('spatial');
 var canvas = document.getElementById('spat');
 var context = canvas.getContext('2d');
-context.drawImage(im,0,0);
-    var imdata = context.getImageData(0,0,700,300);
+//context.drawImage(im,0,0);
+    //var imdata = context.getImageData(0,0,700,300);
 
 
 var xaxis = getxp(context);
@@ -86,15 +127,16 @@ var xaxis = getxp(context);
     
     
 $( "#slider" ).slider({
-      min: 0,
-      max: 90,
+      min: 1,
+      max: 50,
       step: 1,
       change: function( event, ui ) {
         var valuee = $( "#slider" ).slider( "value" );
           
           
-          var newdata = increase(imdata,valuee)
-context.putImageData(newdata,0,0);
+      //    var newdata = increase(imdata,valuee)
+          drawbars(valuee);
+//context.putImageData(newdata,0,0);
           
 var xaxis = getxp(context);
 
@@ -134,7 +176,14 @@ $( "#restartP" ).on( "click", function( event, ui ) {
      window.location.href = "page3.html"; 
     
 });
-      
-    
+     drawbars(1);
+    var xaxiss = getxp(context);
+ chart.load({
+  columns: [
+    xaxiss
+
+  ]
+});
+
     
 }
