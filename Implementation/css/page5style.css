@@ -28,18 +28,18 @@ background-color: #FFEBEE;
 
 
 #tabs{
-   position:absolute;
-  width: 60%;
-    height: 80%;
+  position:absolute;
+  width: 820px;
+    height: 550px;
  top: 120px;
-  left: 550px;
+  left: 510px;
   background-color: #FFCDD2;
     
 
 }
 #accordion{
     
-    position: fixed;
+    position: relative;
     top: 100px;
     left: 5px;
     width: 180px;
@@ -117,9 +117,9 @@ margin: 10px;
 
 #navBTs{
     
-    position: absolute;
-    top: 80%;
-    left: 70%;
+    position: relative;
+    bottom: 10px;
+    left: 80%;
     display: inline-block;
     list-style: none;
     
@@ -137,8 +137,8 @@ margin: 10px;
 }
 #arrow-l{
     position: absolute;
-    top: 83%;
-    left: 73%;
+    top: 91%;
+    left: 83.8%;
     width: 0px;
     height: 15px;
     display: show;
@@ -152,13 +152,13 @@ margin: 10px;
 #Convolution{
     position: absolute;
     left: 200px;
-    top: 150px;
+    top: 120px;
     
 }
 #Coutput{
     position: absolute;
     left: 200px;
-    top: 460px;
+    top: 400px;
     
 }
 
@@ -189,7 +189,15 @@ margin: 10px;
    
   list-style-type: none;
   columns: 3;
-    margin-right: 200px;
+  width: 800px;
+    padding-left: 0px;
+}
+
+#picloader{
+    position: relative;
+    bottom: 30px;
+    right: 120px;
+    background: #B71C1C;
     
 }
 

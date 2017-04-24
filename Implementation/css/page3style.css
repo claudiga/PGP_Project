@@ -1,44 +1,43 @@
 body{
 margin: 0px;
+padding: 0px;
 }
 .Mainc{
-
- width: 100%;
+width: 100%;
  position:absolute;
 z-index: -1;
 height: 100%;
 background-color: #FFEBEE;
-
-
+margin: 0px;
+padding: 0px;
 }
-
 
  #icons{
 
-     position: absolute;
+     position: fixed;
     list-style-type: none;
     padding: 0;
      margin: 0;
      z-index: 1;
-     position: absolute;
+   
     margin-left: 80%;
     margin-top: 40px;
 
 }
 
-
 #tabs{
-   position:absolute;
-  width: 60%;
-    height: 80%;
+  position:absolute;
+  width: 1000px;
+    height: 650px;
  top: 120px;
-  left: 550px;
+  left: 450px;
   background-color: #FFCDD2;
+    z-index: 4;
 
 }
 #accordion{
     
-    position: fixed;
+    position: relative;
     top: 100px;
     left: 5px;
     width: 180px;
@@ -96,7 +95,7 @@ hr{
 #banner{
     width: 99%;
     height: 100px;
-    position: absolute;
+    position: fixed;
     top: 1px;
     background-color: #FFCDD2;
     z-index: 1;
@@ -111,12 +110,14 @@ float: left;
 
 #navBTs{
     
-    position: absolute;
-    top: 75%;
-    left: 60%;
+   position: relative;
+    top: 170px;
+    left: 700px;
     display: inline-block;
     list-style: none;
+    
 }
+
 .arrow-right {
   width: 0; 
   height: 0; 
@@ -129,8 +130,8 @@ float: left;
 
 #nextPage{
     position: relative;
-    top: 333px;
-    left: 80%;
+    top: 173px;
+    left: 66%;
  
     
 }
@@ -144,8 +145,8 @@ float: left;
 }
 #arrow-l{
     position: absolute;
-    top: 77.6%;
-    left: 63%;
+    top: 88.6%;
+    left: 73.3%;
     width: 0px;
     height: 15px;
     display: show;
@@ -156,8 +157,8 @@ float: left;
 #arrow-r{
 z-index: 3;
     position: absolute;
-  top: 77.5%;
-    left: 78%;
+  top: 88.6%;
+    left: 89.2%;
     width: 0px;
     height: 15px;
     transform: scaleX(-1);
@@ -178,21 +179,29 @@ li{
      
 }
 #defaultCanvas0{
+  
     position: relative;
-    bottom: 320px;
+    bottom: 440px;
+    width: 100px;
+    height: 100px;
+    
+    right: 30px;
     
 }
 #Convolution{
     position: absolute;
-    left: 200px;
+    left: 190px;
     top: 150px;
+    width: 250px;
+    z-index: 5;
     
 }
 #Coutput{
     position: absolute;
-    left: 200px;
-    top: 500px;
-    
+    left: 190px;
+    top: 450px;
+    width: 250px;
+    z-index: 3;
 }
 
 #textarea{

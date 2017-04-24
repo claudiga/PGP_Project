@@ -1,44 +1,43 @@
 body{
 margin: 0px;
+padding: 0px;
 }
 .Mainc{
-
- width: 100%;
+width: 100%;
  position:absolute;
 z-index: -1;
 height: 100%;
 background-color: #FFEBEE;
-
-
+margin: 0px;
+padding: 0px;
 }
 
-  #icons{
+ #icons{
 
-     position: absolute;
+     position: fixed;
     list-style-type: none;
     padding: 0;
      margin: 0;
      z-index: 1;
-     position: absolute;
+   
     margin-left: 80%;
     margin-top: 40px;
 
 }
 
-
 #tabs{
-   position:absolute;
-  width: 60%;
-    height: 80%;
+  position:absolute;
+  width: 800px;
+    height: 550px;
  top: 120px;
-  left: 550px;
+  left: 510px;
   background-color: #FFCDD2;
     
 
 }
 #accordion{
     
-    position: fixed;
+    position: relative;
     top: 100px;
     left: 5px;
     width: 180px;
@@ -99,7 +98,7 @@ hr{
 #banner{
     width: 99%;
     height: 100px;
-    position: absolute;
+    position: fixed;
     top: 1px;
     background-color: #FFCDD2;
     z-index: 1;
@@ -148,8 +147,8 @@ margin: 10px;
 }
 #arrow-l{
    position: absolute;
-    top: 83%;
-    left: 73%;
+    top: 83.6%;
+    left: 74%;
     width: 0px;
     height: 15px;
     display: show;
@@ -160,8 +159,8 @@ margin: 10px;
 #arrow-r{
 z-index: 3;
     position: absolute;
-  top: 83%;
-    left: 88.3%;
+  top: 83.6%;
+    left: 94%;
     width: 0px;
     height: 15px;
     transform: scaleX(-1);
@@ -177,13 +176,15 @@ z-index:6;
 #Convolution{
     position: absolute;
     left: 200px;
-    top: 150px;
+    top: 120px;
+    height: 280px;
     
 }
 #Coutput{
     position: absolute;
     left: 200px;
-    top: 460px;
+    top: 420px;
+    height: 280px;
     
 }
 
@@ -194,10 +195,11 @@ z-index:6;
     
 }
 #cropped{
-    position: absolute;
+    position: relative;
     left: 200px;
-    top: 300px;
+    top: 150px;
     display: none;
+    height: 280px;
 }
 #crop{
     
