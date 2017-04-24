@@ -655,8 +655,8 @@ var drawsquare = function(canvas,ouput,tutorial){
      canvas.addEventListener('mousemove', function(e) {
 if(clicked == false){
     var rect = canvas.getBoundingClientRect();
-    posx = e.clientX - rect.left ;
-    posy = e.clientY - rect.top  ;         
+    posx = (e.clientX - rect.left) / 0.8333 ;
+    posy = (e.clientY - rect.top) /0.8333 ;         
 
              posx = Math.floor(posx/12) * 12 - 12;
              posy = Math.floor(posy/12) * 12 - 12;

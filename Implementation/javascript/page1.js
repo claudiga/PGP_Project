@@ -20,8 +20,8 @@ var getpos = function(canvas){
     canvas.addEventListener('mousemove', function(e) {
 
     var rect = canvas.getBoundingClientRect();
-    var x = e.clientX - rect.left;
-    var y = e.clientY - rect.top;
+    var x = (e.clientX - rect.left) /0.74812967581 
+    var y = (e.clientY - rect.top)/ 0.74812967581 ;
 
 
 return [x,y];
@@ -111,8 +111,8 @@ document.getElementById("hozline").style.display = 'initial';
              if(!mouseclicked){
 
          var rect = canvas.getBoundingClientRect();
-    posx = e.clientX - rect.left ;
-    posy = e.clientY - rect.top ;
+     posx = (e.clientX - rect.left) /0.74812967581 ;
+    posy = (e.clientY - rect.top)/ 0.74812967581 
 
 
 
@@ -226,12 +226,13 @@ ctx.drawImage(img,0,0);
        
 ctx.drawImage(img,0,0);
     var rect = canvas.getBoundingClientRect();
-    posx = e.clientX - rect.left ;
-    posy = e.clientY - rect.top ;
+    posx = (e.clientX - rect.left) /0.74812967581;
+    posy = (e.clientY - rect.top)/ 0.74812967581  ;
 
          
       var  xax = Math.floor(posx/16) * 16 - 32;
-          var  yax = Math.floor(posy/16) * 16 - 80;
+          
+         var  yax = Math.floor(posy/16) * 16 - 80;
          
          
          ctx.strokeRect(xax+33,yax+81,13,13);
