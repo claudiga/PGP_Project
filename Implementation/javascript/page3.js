@@ -191,7 +191,7 @@ convolut(mtrx,imageurl,src,dest);
 
                                  
    $( "#outputLog" ).dialog({
-position: { my: "left top", at: "left bottom", of: canvas }
+position: { my: "left bottom", at: "left bottom", of: canvas }
 });                                },
 position: { my: "right top", at: "left top", of: canvas }
 });    
